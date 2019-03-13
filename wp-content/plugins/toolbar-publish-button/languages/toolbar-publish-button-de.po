@@ -1,0 +1,142 @@
+# Translation of Toolbar Publish Button in German
+# This file is distributed under the same license as the Toolbar Publish Button package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Toolbar Publish Button\n"
+"POT-Creation-Date: 2018-08-28 13:17+0300\n"
+"PO-Revision-Date: 2018-08-28 13:18+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#. Plugin Name of the plugin/theme
+#: toolbar-publish-button.php:88 toolbar-publish-button.php:361
+#: toolbar-publish-button.php:392
+msgid "Toolbar Publish Button"
+msgstr "Toolbar Publish Button"
+
+#: toolbar-publish-button.php:222
+msgid "Please choose a valid color for background"
+msgstr "Bitte eine gültige Farbe für den Hintergrund wählen"
+
+#: toolbar-publish-button.php:360
+msgid "Toolbar Publish Button Settings"
+msgstr "Toolbar Publish Button Einstellungen"
+
+#: toolbar-publish-button.php:387
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Keine Berechtigung, um auf diese Seite zuzugreifen."
+
+#: toolbar-publish-button.php:402
+msgid "Basic Settings"
+msgstr "Basis Einstellungen"
+
+#: toolbar-publish-button.php:413
+msgid "Scrollbar Position"
+msgstr "Scrollleistenposition"
+
+#: toolbar-publish-button.php:416 toolbar-publish-button.php:417
+msgid "Remember scrollbar position"
+msgstr "Merke Scrolleistenposition"
+
+#: toolbar-publish-button.php:418
+msgid ""
+"Returns the scrollbar of an admin page (including code Editor page) to its "
+"position after saving."
+msgstr ""
+"Kehrt zur letzten Position auf der Scrollleiste einer WP Admin Seite (die "
+"Code Editor Seite eingeschlossen) nach dem Speichern zurück."
+
+#: toolbar-publish-button.php:419
+msgid "Works for Plugins page after plugin actiation / deactivation."
+msgstr ""
+"Funktioniert für die Plugin Seite nach Plugin Aktivierung / Deaktivierung."
+
+#: toolbar-publish-button.php:425 toolbar-publish-button.php:428
+msgid "\"Save Draft\" button"
+msgstr "\"Entwurf speichern\" Button"
+
+#: toolbar-publish-button.php:429
+msgid "Duplicate \"Save Draft\" button to admin bar"
+msgstr "Dupliziere \"Entwurf speichern\" Button in die Admin Leiste"
+
+#: toolbar-publish-button.php:435 toolbar-publish-button.php:438
+msgid "\"Preview\" button"
+msgstr "\"Vorschau\" Button"
+
+#: toolbar-publish-button.php:439
+msgid "Duplicate \"Preview\" / \"Preview Changes\" button to admin bar"
+msgstr ""
+"Dupliziere \"Vorschau\" / \"Änderungen anzeigen\" Button in die Admin Leiste"
+
+#: toolbar-publish-button.php:445 toolbar-publish-button.php:448
+msgid "Button Background"
+msgstr "Button Hintergrund"
+
+#: toolbar-publish-button.php:474
+msgid "Changelog"
+msgstr "Changelog"
+
+#: toolbar-publish-button.php:475
+msgid "What's new in"
+msgstr "Neu in"
+
+#: toolbar-publish-button.php:475
+msgid "version"
+msgstr "Version"
+
+#: toolbar-publish-button.php:477
+msgid "Support"
+msgstr "Support"
+
+#: toolbar-publish-button.php:478
+msgid "Feel free to ask for help on"
+msgstr "Hilfe bei Fragen gibt es hier "
+
+#: toolbar-publish-button.php:480
+msgid "Plugin rating"
+msgstr "Plugin Bewertung"
+
+#: toolbar-publish-button.php:481
+msgid "Please"
+msgstr "Bitte"
+
+#: toolbar-publish-button.php:481
+msgid "vote for the plugin"
+msgstr "bewerte das Plugin"
+
+#: toolbar-publish-button.php:481
+msgid "Thanks!"
+msgstr "Danke"
+
+#: toolbar-publish-button.php:483
+msgid "Other plugins you may find useful"
+msgstr "Weitere Plugins, die Dir gefallen könnten"
+
+#: toolbar-publish-button.php:521
+msgid "Settings"
+msgstr "Einstellungen"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://wpUXsolutions.com"
+msgstr "https://wpUXsolutions.com"
+
+#. Description of the plugin/theme
+msgid ""
+"Save a lot of your time by scrolling less in WP admin! A small UX "
+"improvement that keeps Publish button within reach and retains the scrollbar "
+"position after saving in WordPress admin."
+msgstr ""
+"Spare Zeit durch weniger Gescrolle im WP Admin Bereich! Eine kleine UX "
+"Verbesserung, die den Publizieren Button immer erreichbar macht und nach "
+"Speichern die Position auf Scrolleiste behält."
+
+#. Author of the plugin/theme
+msgid "wpUXsolutions"
+msgstr "wpUXsolutions"

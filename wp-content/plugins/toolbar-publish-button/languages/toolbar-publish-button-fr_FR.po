@@ -1,0 +1,130 @@
+# Translation of Toolbar Publish Button in French (France)
+# This file is distributed under the same license as the Toolbar Publish Button package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-02-04 12:52+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Poedit 1.8.11\n"
+"Language: fr\n"
+"Project-Id-Version: Toolbar Publish Button\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: toolbar-publish-button.php:434
+msgid "Duplicate \"Preview\" / \"Preview Changes\" button to admin bar"
+msgstr ""
+
+#: toolbar-publish-button.php:430 toolbar-publish-button.php:433
+msgid "\"Preview\" button"
+msgstr ""
+
+#: toolbar-publish-button.php:424
+msgid "Duplicate \"Save Draft\" button to admin bar"
+msgstr ""
+
+#: toolbar-publish-button.php:420 toolbar-publish-button.php:423
+msgid "\"Save Draft\" button"
+msgstr ""
+
+#: toolbar-publish-button.php:408
+msgid "Scrollbar Position"
+msgstr "Position de la Barre de défilement"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://wpUXsolutions.com"
+msgstr "https://wpUXsolutions.com"
+
+#. Author of the plugin/theme
+msgid "wpUXsolutions"
+msgstr "wpUXsolutions"
+
+#. Description of the plugin/theme
+msgid "Save a lot of your time by scrolling less in WP admin! A small UX improvement that keeps Publish button within reach and retains the scrollbar position after saving in WordPress admin."
+msgstr "Gagnez du temps en scrollant moins dans l'admin Wordpress ! Une petite amélioration UX qui permet de garder accessible le bouton Publier et de maintenir la position du scroll après avoir fait un enregistrement dans l'admin WordPress."
+
+#: toolbar-publish-button.php:516
+msgid "Settings"
+msgstr "Paramètres"
+
+#: toolbar-publish-button.php:478
+msgid "Other plugins you may find useful"
+msgstr "Autres plugins que vous pourriez trouver utiles"
+
+#: toolbar-publish-button.php:476
+msgid "Thanks!"
+msgstr "Merci !"
+
+#: toolbar-publish-button.php:476
+msgid "vote for the plugin"
+msgstr "Voter pour le plugin"
+
+#: toolbar-publish-button.php:476
+msgid "Please"
+msgstr "S'il vous plaît"
+
+#: toolbar-publish-button.php:475
+msgid "Plugin rating"
+msgstr "Note du plugin"
+
+#: toolbar-publish-button.php:473
+msgid "Feel free to ask for help on"
+msgstr "N'hésitez-pas à demaner de l'aide sur"
+
+#: toolbar-publish-button.php:472
+msgid "Support"
+msgstr "Assistance"
+
+#: toolbar-publish-button.php:470
+msgid "version"
+msgstr "version"
+
+#: toolbar-publish-button.php:470
+msgid "What's new in"
+msgstr "Quoi de neuf dans"
+
+#: toolbar-publish-button.php:469
+msgid "Changelog"
+msgstr "Journal des modifications"
+
+#: toolbar-publish-button.php:440 toolbar-publish-button.php:443
+msgid "Button Background"
+msgstr "Fond du bouton"
+
+#: toolbar-publish-button.php:414
+msgid "Works for Plugins page after plugin actiation / deactivation."
+msgstr "Fonctionne pour la page des Plugins après l'activation/désactivation du plugin."
+
+#: toolbar-publish-button.php:413
+msgid "Returns the scrollbar of an admin page (including code Editor page) to its position after saving."
+msgstr "Renvoie la barre de défilement d'une page d'administration (y compris la page d'édition de code) à sa position après enregistrement."
+
+#: toolbar-publish-button.php:411 toolbar-publish-button.php:412
+msgid "Remember scrollbar position"
+msgstr "Se souvenir de la position de la barre de défilement"
+
+#: toolbar-publish-button.php:397
+msgid "Basic Settings"
+msgstr "Options de base"
+
+#: toolbar-publish-button.php:382
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Vous n'avez pas les autorisations nécessaires pour accéder à cette page."
+
+#: toolbar-publish-button.php:355
+msgid "Toolbar Publish Button Settings"
+msgstr "Paramètres de Toolbar Publish Button"
+
+#: toolbar-publish-button.php:222
+msgid "Please choose a valid color for background"
+msgstr "Veillez choisir une couleur de fond valide"
+
+#. Plugin Name of the plugin/theme
+#: toolbar-publish-button.php:88 toolbar-publish-button.php:356
+#: toolbar-publish-button.php:387
+msgid "Toolbar Publish Button"
+msgstr "Toolbar Publish Button"

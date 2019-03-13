@@ -1,0 +1,94 @@
+//
+// Desktop Nav
+//
+
+header#site-header {
+  background: $background-muted-background;
+
+  > .uk-container {
+    padding: 0;
+  }
+}
+
+//
+// Mobile Nav
+//
+
+nav#offcanvas-nav {
+  ul.uk-nav-parent-icon {
+    > li.menu-item {
+      position: relative;
+
+      // Top level menu-item
+      > span {
+        padding: 3px 2.5rem 3px 0;
+        display: block;
+
+        a {
+          display: inline-block;
+          font-size: rem-calc(24);
+          color: $global-muted-color;
+          line-height: 1.2;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      // Top level menu-item that doesn't link, just has sub-items
+      a.no-link {
+        display: block;
+        padding: 3px 0;
+        color: $global-muted-color;
+        line-height: 1.225;
+
+        &:hover,
+        &:focus {
+          color: $global-muted-color;
+        }
+      }
+
+      .uk-nav-sub {
+        li {
+
+          // Sub-item link
+          span {
+            display: block;
+            margin-bottom: 5px;
+
+            a {
+              display: inline-block;
+
+              &:hover {
+                text-decoration: none;
+                color: $global-muted-color;
+              }
+            }
+          }
+
+          // Unused in sub-nav
+          > a {
+            padding: 0;
+          }
+        }
+
+        // Nested sub-navs
+        .uk-nav-sub {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      // Chevron link for items with sub-navs
+      > a.indicator {
+        padding: 0 !important;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,98 @@
+{
+    "key": "group_59497fa4d9548",
+    "title": "Global - Analytics",
+    "fields": [
+        {
+            "key": "field_5963e13ef8019",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "All of these scripts are loaded globally, and will be fired on every page load.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_59497fbe9efbf",
+            "label": "Header Script Snippets",
+            "name": "header_script_snippets",
+            "type": "textarea",
+            "instructions": "These scripts will be fired in the <code>&lt;head&gt;<\/code> tag, BEFORE the page loads.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_59497fd09efc0",
+            "label": "Body Script Snippets",
+            "name": "body_script_snippets",
+            "type": "textarea",
+            "instructions": "These scripts will be fired IMMEDIATELY AFTER the opening <code>&lt;body&gt;<\/code> tag.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_59497fdd9efc1",
+            "label": "Footer Script Snippets",
+            "name": "footer_script_snippets",
+            "type": "textarea",
+            "instructions": "These scripts will be fired BEFORE the closing <code>&lt;body&gt;<\/code> tag.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-analytics"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1500474689
+}

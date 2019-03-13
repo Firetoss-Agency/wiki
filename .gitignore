@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+node_modules
+npm-debug.log
+wp-config-local.php
+wp-content/themes/twenty*
+wp-content/plugins/akismet
+wp-content/plugins/hello.php
+wp-content/themes/spark/.sass-cache/*
+wp-content/upgrade
+wp-content/uploads/cache
+wp-snapshots

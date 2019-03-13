@@ -1,0 +1,143 @@
+# Translation of Toolbar Publish Button in Ukrainian
+# This file is distributed under the same license as the Toolbar Publish Button package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Toolbar Publish Button\n"
+"POT-Creation-Date: 2018-08-28 13:17+0300\n"
+"PO-Revision-Date: 2018-08-28 13:18+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.1.1\n"
+
+#. Plugin Name of the plugin/theme
+#: toolbar-publish-button.php:88 toolbar-publish-button.php:361
+#: toolbar-publish-button.php:392
+msgid "Toolbar Publish Button"
+msgstr "Toolbar Publish Button"
+
+#: toolbar-publish-button.php:222
+msgid "Please choose a valid color for background"
+msgstr "Будь ласка, оберіть правильний формат кольору для фону"
+
+#: toolbar-publish-button.php:360
+msgid "Toolbar Publish Button Settings"
+msgstr "Налаштування плагіна \"Кнопка публікації на тулбарі\""
+
+#: toolbar-publish-button.php:387
+msgid "You do not have sufficient permissions to access this page."
+msgstr "У вас недостатньо прав для доступу до цієї сторінки."
+
+#: toolbar-publish-button.php:402
+msgid "Basic Settings"
+msgstr "Базові налаштування"
+
+#: toolbar-publish-button.php:413
+msgid "Scrollbar Position"
+msgstr "Позиція прокрутки"
+
+#: toolbar-publish-button.php:416 toolbar-publish-button.php:417
+msgid "Remember scrollbar position"
+msgstr "Пам'ятати позицію прокрутки"
+
+#: toolbar-publish-button.php:418
+msgid ""
+"Returns the scrollbar of an admin page (including code Editor page) to its "
+"position after saving."
+msgstr ""
+"Повертає прокрутку адміністративної сторінки (включаючи редактор кода) на "
+"місце після збереження."
+
+#: toolbar-publish-button.php:419
+msgid "Works for Plugins page after plugin actiation / deactivation."
+msgstr ""
+"Працює також для сторінки плагінів після активації / деактивації плагіну."
+
+#: toolbar-publish-button.php:425 toolbar-publish-button.php:428
+msgid "\"Save Draft\" button"
+msgstr "Кнопка \"До чернеток\""
+
+#: toolbar-publish-button.php:429
+msgid "Duplicate \"Save Draft\" button to admin bar"
+msgstr "Дублювати кнопку \"До чернеток\" до верхньої панелі"
+
+#: toolbar-publish-button.php:435 toolbar-publish-button.php:438
+msgid "\"Preview\" button"
+msgstr "Кнопка \"Переглянути\""
+
+#: toolbar-publish-button.php:439
+msgid "Duplicate \"Preview\" / \"Preview Changes\" button to admin bar"
+msgstr ""
+"Дублювати кнопку \"Переглянути / Переглянути запис\" до верхньої панелі"
+
+#: toolbar-publish-button.php:445 toolbar-publish-button.php:448
+msgid "Button Background"
+msgstr "Фон кнопки"
+
+#: toolbar-publish-button.php:474
+msgid "Changelog"
+msgstr "Changelog"
+
+#: toolbar-publish-button.php:475
+msgid "What's new in"
+msgstr "Що новенького у"
+
+#: toolbar-publish-button.php:475
+msgid "version"
+msgstr "версії"
+
+#: toolbar-publish-button.php:477
+msgid "Support"
+msgstr "Підтримка"
+
+#: toolbar-publish-button.php:478
+msgid "Feel free to ask for help on"
+msgstr "Не соромтеся спитати про допомогу на"
+
+#: toolbar-publish-button.php:480
+msgid "Plugin rating"
+msgstr "Рейтинг плагіну"
+
+#: toolbar-publish-button.php:481
+msgid "Please"
+msgstr "Будь ласка"
+
+#: toolbar-publish-button.php:481
+msgid "vote for the plugin"
+msgstr "проголосуйте за плагін"
+
+#: toolbar-publish-button.php:481
+msgid "Thanks!"
+msgstr "Дякуємо!"
+
+#: toolbar-publish-button.php:483
+msgid "Other plugins you may find useful"
+msgstr "Інші плагіни, що можуть виявитися корисними"
+
+#: toolbar-publish-button.php:521
+msgid "Settings"
+msgstr "Налаштування"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://wpUXsolutions.com"
+msgstr "https://wpUXsolutions.com"
+
+#. Description of the plugin/theme
+msgid ""
+"Save a lot of your time by scrolling less in WP admin! A small UX "
+"improvement that keeps Publish button within reach and retains the scrollbar "
+"position after saving in WordPress admin."
+msgstr ""
+"Бережіть свій час прокручуючи менше у адмінці WP! Маленьке UX-вдосконалення, "
+"що тримає кнопку публікації у зоні доступності та повертає полосу прокрутки "
+"після операції збереження у адмінці WordPress."
+
+#. Author of the plugin/theme
+msgid "wpUXsolutions"
+msgstr "wpUXsolutions"
