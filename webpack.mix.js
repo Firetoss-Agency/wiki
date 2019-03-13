@@ -2,7 +2,7 @@ const mix     = require('laravel-mix');
 const webpack = require("webpack");
 
 // Set project paths
-const localDomain = 'uikit.test';
+const localDomain = 'wiki.test';
 const themePath   = 'wp-content/themes/spark';
 const assetsPath  = `${themePath}/resources`;
 const publicPath  = `${themePath}/public`;

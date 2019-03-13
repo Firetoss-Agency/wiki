@@ -3,7 +3,9 @@
 //
 
 header#site-header {
-  background: $background-muted-background;
+  //background: $background-muted-background;
+  background: #000000;
+
 
   > .uk-container {
     padding: 0;
@@ -91,4 +93,16 @@ nav#offcanvas-nav {
   }
 }
 
+
+div#sidebar {
+  ul li a {
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+ul.uk-nav-sub {
+  margin: 0 !important;
+}
+
+}
 

@@ -1,6 +1,11 @@
 main.site {
   &.four-oh-four,
   &.default {
-    padding: 3rem 0;
+    //padding: 0 0 3rem 0;
+  }
+
+
+  ul.uk-breadcrumb {
+    margin: 0;
   }
 }

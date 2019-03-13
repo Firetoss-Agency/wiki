@@ -1,6 +1,6 @@
 @php
   $breakpoint = '@m';
-  $logo = 'http://placehold.it/200x50&text=LOGO';
+  $logo = '/wp-content/uploads/2019/03/Firetoss-Logo-e1552489577974.png';
 @endphp
 
 <header id="site-header">

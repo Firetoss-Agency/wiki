@@ -128,4 +128,25 @@ if (function_exists('acf_add_options_page')) {
 //}
 
 
-
+function get_breadcrumb() {
+    
+    if (!is_front_page()) {
+        echo '<li><a href="'.home_url().'" rel="nofollow">Home</a></li>';
+    }
+    if (is_category() || is_single()) {
+        echo "<li>";
+        the_category(' &bull; ');
+        if (is_single()) {
+            the_title();
+            echo "</li>";
+        }
+    } elseif (is_page()) {
+        echo "<li>";
+        echo the_title();
+    } elseif (is_search()) {
+        echo "<li>";
+        echo '"<em>';
+        echo the_search_query();
+        echo '</em></li>"';
+    }
+}
