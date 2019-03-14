@@ -107,7 +107,7 @@ add_filter('comments_template', function ($comments_template) {
  */
 
 add_filter('get_search_form', function () {
-    return template('partials.searchform');
+    return template('components.searchform');
 });
 
 

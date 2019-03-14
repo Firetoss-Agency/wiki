@@ -16,6 +16,7 @@ header#site-header {
 // Mobile Nav
 //
 
+nav#nav-sidebar,
 nav#offcanvas-nav {
   ul.uk-nav-parent-icon {
     > li.menu-item {
@@ -28,9 +29,9 @@ nav#offcanvas-nav {
 
         a {
           display: inline-block;
-          font-size: rem-calc(24);
+          font-size: rem-calc(18);
           color: $global-muted-color;
-          line-height: 1.2;
+          line-height: 1.5;
 
           &:hover {
             text-decoration: none;

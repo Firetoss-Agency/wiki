@@ -67,7 +67,8 @@ add_action('after_setup_theme', function () {
      */
 
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage')
+        'primary_navigation' => __('Primary Navigation', 'sage'),
+        'sidebar_navigation' => __('Sidebar Navigation', 'sage')
     ]);
 
 
