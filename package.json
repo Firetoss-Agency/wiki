@@ -16,5 +16,8 @@
     "laravel-mix": "3.0.0",
     "motion-ui": "^1.2.3",
     "uikit": "3.0.3"
+  },
+  "dependencies": {
+    "infinite-scroll": "^3.0.5"
   }
 }

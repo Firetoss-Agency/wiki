@@ -21,6 +21,7 @@
 
     @include('global.footer')
 
+
     @php wp_footer() @endphp
     {{ the_field('footer_script_snippets', 'option') }}
     @stack('footer')

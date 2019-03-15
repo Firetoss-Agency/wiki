@@ -11,4 +11,20 @@ main.site {
     font-size: 14px;
     font-weight: 300;
   }
+
+  .uk-grid {
+    > div {
+      display: flex;
+      justify-content: stretch;
+      align-items: stretch;
+      > a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        > .uk-card {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

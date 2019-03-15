@@ -8,7 +8,7 @@
 
         <div id="content" class="uk-width-expand uk-flex uk-flex-wrap">
 
-            <div class="main" >
+            <div class="main uk-width-1-1">
 
                 @include('components.breadcrumbs')
 
@@ -16,25 +16,14 @@
 
                     <h1>{{ the_archive_title() }}</h1>
 
-                    <div class="uk-grid-medium" uk-grid uk-height-match>
+                    @include('components.topic-loop')
 
-                        @loop
+                    <hr>
 
-                        <div class="uk-width-1-3">
-                            <a href="{{ the_permalink() }}">
-                                <div class="uk-card uk-card-primary uk-card-body uk-card-hover">
+                    @include('components.wiki-loop')
 
-                                    <h2 class="uk-card-title">{{ the_title() }}</h2>
-
-                                    {{--{{ the_excerpt() }}--}}
-
-                                </div>
-                            </a>
-                        </div>
-
-                        @endloop
-                    </div>
                 </div>
+
             </div>
 
             @include('components.pagination')

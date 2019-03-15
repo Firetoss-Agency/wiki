@@ -18,6 +18,7 @@ add_action('wp_enqueue_scripts', function () {
 	if (!is_admin()) {
 		wp_deregister_script('jquery');
 		wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', [], null, true);
+		wp_enqueue_script('infiniteScroll', 'https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js', [], null, true);
 		wp_enqueue_style('sage/font-awesome.css', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', false, null);
 	}
 

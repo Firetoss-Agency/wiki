@@ -12,11 +12,14 @@ UIkit.use(Icons)
 import Router from './util/Router'
 import site from './routes/site'
 import home from './routes/home'
+import archive from './routes/archive';
+
 
 /** Populate Router instance with DOM routes */
 const routes = new Router({
   site,
   home,
+  archive,
 });
 
 /** Load events */

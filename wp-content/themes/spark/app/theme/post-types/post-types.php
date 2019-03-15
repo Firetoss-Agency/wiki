@@ -9,7 +9,7 @@ add_action('init', function () {
     // Post Type's Labels & Info Here
     $plural_name     = 'Wikis'; // human readable
     $singular_name   = 'Wiki'; // human readable
-    $slug            = 'w/%topic%'; // use hyphens
+    $slug            = 'wiki'; // use hyphens
     $registered_name = 'wiki'; // use underscores
     $menu_icon       = 'dashicons-info'; // https://developer.wordpress.org/resource/dashicons
 

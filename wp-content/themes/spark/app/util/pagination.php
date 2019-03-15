@@ -48,7 +48,7 @@ function UIkitPagination($post_total = null)
     $link.= $add_fragment;
 
     // Previous page link
-    $page_links[] = '<li><a href="' . esc_url($link) . '" aria-label="Previous page">' . $prev_text . '<span uk-pagination-previous></span></a></li>';
+    $page_links[] = '<li><a href="' . esc_url($link) . '" class="prev-nav" aria-label="Previous page">' . $prev_text . '<span uk-pagination-previous></span></a></li>';
     endif;
     for ($n = 1; $n <= $total; $n++):
         $n_display = number_format_i18n($n);
@@ -84,7 +84,7 @@ function UIkitPagination($post_total = null)
     $link.= $add_fragment;
 
     // Next page link
-    $page_links[] = '<li><a href="' . esc_url($link) . '" aria-label="Next page"><span uk-pagination-next></span>' . $next_text . '</a></li>';
+    $page_links[] = '<li><a href="' . esc_url($link) . '" class="next-nav" aria-label="Next page"><span uk-pagination-next></span>' . $next_text . '</a></li>';
     endif;
     $output.= join("\n", $page_links);
     $output.= "</ul>";
