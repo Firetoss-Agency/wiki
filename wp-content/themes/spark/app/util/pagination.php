@@ -37,7 +37,7 @@ function UIkitPagination($post_total = null)
     $page_links = array();
     $n = 0;
     $dots = false;
-    $output = "<ul class='uk-pagination' role='navigation' aria-label='Pagination'>";
+    $output = "<ul class='uk-pagination uk-flex-center' role='navigation' aria-label='Pagination'>";
     if ($prev_next && $current && 1 < $current):
         $link = str_replace('%_%', 2 == $current ? '' : $format, $base);
     $link = str_replace('%#%', $current - 1, $link);
@@ -90,5 +90,7 @@ function UIkitPagination($post_total = null)
     $output.= "</ul>";
     if ($total > 1) {
         echo $output;
+    } else {
+        echo "<ul class='uk-pagination uk-flex-center' role='navigation' aria-label='Pagination'><li>1</li></ul>";
     }
 }

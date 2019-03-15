@@ -2,33 +2,38 @@
 
 @section('content')
 
-    <div class="uk-section">
-        <div class="uk-container">
+    <div class="uk-flex">
 
-            {!! get_search_form() !!}
+        @include('components.sidebar')
 
-            <hr>
 
-            <div class="uk-grid-medium" uk-grid uk-height-match>
+        <div id="content" class="uk-width-expand uk-flex uk-flex-wrap">
 
-                @loop
-                <div class="uk-width-1-3">
-                    <a href="{{ the_permalink() }}">
-                        <div class="uk-card uk-card-primary uk-card-body uk-card-hover">
+            <div class="main">
 
-                            <h2 class="uk-card-title">{{ the_title() }}</h2>
+               <div class="search-header uk-padding">
+                   {!! get_search_form() !!}
+               </div>
 
-                            {{--{{ the_excerpt() }}--}}
+               <div class="uk-grid-medium  uk-padding" uk-grid uk-height-match>
+                   @loop
+                   <div class="uk-width-1-3">
+                       <a href="{{ the_permalink() }}">
+                           <div class="uk-card uk-card-primary uk-card-body uk-card-hover">
 
-                        </div>
-                    </a>
-                </div>
+                               <h2 class="uk-card-title">{{ the_title() }}</h2>
 
-                @endloop
+                               {{--{{ the_excerpt() }}--}}
 
-            </div>
+                           </div>
+                       </a>
+                   </div>
+                   @endloop
+               </div>
+           </div>
+
+            @include('components.pagination')
+
         </div>
     </div>
-
-    {!! UIkitPagination() !!}
 @endsection

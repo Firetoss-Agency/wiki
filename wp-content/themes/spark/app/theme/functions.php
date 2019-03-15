@@ -360,6 +360,10 @@ function custom_breadcrumbs() {
     
 }
 
+
+
+
+
 function ft_post_link( $post_link, $id = 0 ){
     $post = get_post($id);
     if ( is_object( $post ) ){
@@ -372,14 +376,22 @@ function ft_post_link( $post_link, $id = 0 ){
 }
 
 add_filter( 'post_type_link', 'ft_post_link', 1, 3 );
-
+//
 
 function ft_term_link( $post_link, $id = 0 ){
     $post = get_term($id);
     return str_replace( 'topic/' , '' , $post_link );
-    
+
 //    return $post_link;
 }
 
-add_filter( 'term_link', 'ft_term_link', 1, 3 );
+//add_filter( 'term_link', 'ft_term_link', 1, 3 );
 
+//
+//function wpb_change_search_url() {
+//    if ( is_search() && ! empty( $_GET['s'] ) ) {
+//        wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
+//        exit();
+//    }
+//}
+//add_action( 'template_redirect', 'wpb_change_search_url' );

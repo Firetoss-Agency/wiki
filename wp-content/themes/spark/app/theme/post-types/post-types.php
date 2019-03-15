@@ -9,7 +9,7 @@ add_action('init', function () {
     // Post Type's Labels & Info Here
     $plural_name     = 'Wikis'; // human readable
     $singular_name   = 'Wiki'; // human readable
-    $slug            = '%topic%'; // use hyphens
+    $slug            = 'w/%topic%'; // use hyphens
     $registered_name = 'wiki'; // use underscores
     $menu_icon       = 'dashicons-info'; // https://developer.wordpress.org/resource/dashicons
 
@@ -82,7 +82,7 @@ add_action('init', function () {
         ],
         // 'register_meta_box_cb'  => false,
         // 'taxonomies'            => [],
-        'has_archive'         => false,
+        'has_archive'         => true,
         'rewrite'             => ['slug' => $slug, 'with_front' => false],
         // 'permalink_epmask'      => '',
         'query_var'           => true,

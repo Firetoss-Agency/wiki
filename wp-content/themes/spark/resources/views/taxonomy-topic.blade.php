@@ -6,44 +6,39 @@
 
         @include('components.sidebar')
 
-        <div id="content" class="uk-width-expand">
+        <div id="content" class="uk-width-expand uk-flex uk-flex-wrap">
 
-            @include('components.breadcrumbs')
+            <div class="main" >
 
-            <div class="main uk-padding">
+                @include('components.breadcrumbs')
 
-                <h1>{{ the_archive_title() }}</h1>
+                <div class="uk-padding">
 
-                <div class="uk-grid-medium" uk-grid uk-height-match>
+                    <h1>{{ the_archive_title() }}</h1>
 
-                    {{--@set($parent_terms = get_terms( 'topic' , array( 'parent' => get_queried_object()->term_id, 'orderby' => 'slug', 'hide_empty' => false ) ))--}}
+                    <div class="uk-grid-medium" uk-grid uk-height-match>
 
+                        @loop
 
-{{--                    @foreach ( $parent_terms as $pterm )--}}
+                        <div class="uk-width-1-3">
+                            <a href="{{ the_permalink() }}">
+                                <div class="uk-card uk-card-primary uk-card-body uk-card-hover">
 
-{{--                        <a href="{{ get_term_link( $term ) }}">{{ $term->name }}</a>--}}
+                                    <h2 class="uk-card-title">{{ the_title() }}</h2>
 
-                    {{--@endforeach--}}
+                                    {{--{{ the_excerpt() }}--}}
 
+                                </div>
+                            </a>
+                        </div>
 
-
-                    @loop
-
-                    <div class="uk-width-1-3">
-                        <a href="{{ the_permalink() }}">
-                            <div class="uk-card uk-card-primary uk-card-body uk-card-hover">
-
-                                <h2 class="uk-card-title">{{ the_title() }}</h2>
-
-                                {{--{{ the_excerpt() }}--}}
-
-                            </div>
-                        </a>
+                        @endloop
                     </div>
-
-                    @endloop
                 </div>
             </div>
+
+            @include('components.pagination')
+
         </div>
     </div>
 
