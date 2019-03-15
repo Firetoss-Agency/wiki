@@ -1,0 +1,1772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<node>
+		<id><![CDATA[37]]></id>
+		<title><![CDATA[How to spin up a Subdomain - The Firetoss way!]]></title>
+		<content><![CDATA[<ol>
+ 	<li>Open 1Password and get the credentials for cPanel
+<img class="alignnone wp-image-63 size-full" src="http://wiki.devft.com/wp-content/uploads/2017/10/Get-1passCreds-B.png" alt="" width="1008" height="543" /></li>
+ 	<li>Click on the link for cPanel website. You might be prompted saying your connection is not private . Click on ADVANCED and proceed to the website.
+<img class="alignnone size-full wp-image-90" src="http://wiki.devft.com/wp-content/uploads/2017/10/warning2.png" alt="" width="809" height="659" /></li>
+ 	<li>Enter credentials from 1Password for cPanel login.
+<img class="alignnone size-full wp-image-58" src="http://wiki.devft.com/wp-content/uploads/2017/10/cPanel-Login-B.png" alt="" width="952" height="886" /></li>
+ 	<li>On home screen for cPanel click the Subdomains icon.
+<img class="alignnone size-full wp-image-42" src="http://wiki.devft.com/wp-content/uploads/2017/10/4-cPanel-homepage.png" alt="" width="958" height="886" /></li>
+ 	<li>Create the subdomain for the website. Enter in the subdomain and the document root. Follow the example provided. After creating the subdomain return back to the homepage by clicking on the large cPanel icon on the top left of the window.
+<img class="alignnone size-full wp-image-76" src="http://wiki.devft.com/wp-content/uploads/2017/10/Subdomain_example.png" alt="" width="776" height="343" /></li>
+ 	<li>After creating the subdomain we will create the SQL database and user that will be attached to the website. On the homepage click on the MySQL Databases icon.<img class="alignnone size-full wp-image-43" src="http://wiki.devft.com/wp-content/uploads/2017/10/5-cPanel-homepage.png" alt="" width="958" height="886" /></li>
+ 	<li>The first item you will see is Create New Database. Simply enter in the name of your Database (name of website) and click the Create Database button. After creating click the Go Back button.<img class="alignnone size-full wp-image-59" src="http://wiki.devft.com/wp-content/uploads/2017/10/Create-Database.png" alt="" width="941" height="653" /></li>
+ 	<li>Next we will create and add the created user to the database we just created.</li>
+ 	<li>Scroll down the MySQL Databases page until you see MySQL Users. Enter in your username. In this case you want the username to be the name of the website. If it is too long ask a superior what it should be or use a condensed version of the name of the website. Next we will generate the password. Click on the Password Generator button. Click the I have copied this password in a safe place check box(SAVE THE PASSWORD) and then click Use Password and click Create User. <strong>*NOTE*</strong> this password only needs to be saved until we get to the WordPress config. This password does not need to be saved into 1Password, but keep it saved for the remainder of this exercise.
+<img class="alignnone size-full wp-image-59" src="http://wiki.devft.com/wp-content/uploads/2017/10/Create-Database.png" alt="" width="941" height="653" /></li>
+ 	<li>We will now add the user to the database. Click on the User list and find your newly created user. Click on the Database list and find your newly created database. Click the Add button.
+<img class="alignnone size-full wp-image-55" src="http://wiki.devft.com/wp-content/uploads/2017/10/Add-User-Database.png" alt="" width="939" height="275" /></li>
+ 	<li>You will arrive on the Manage User Privileges page. You should see your User you created and Database you created in the corresponding fields. Next you will click the <strong>ALL PRIVILEGES</strong> checkbox. After, scroll down and click the Make Changes button. You should see a green success box in the top right corner of the screen. Click on the Go Back link.
+<img class="alignnone size-full wp-image-66" src="http://wiki.devft.com/wp-content/uploads/2017/10/Priveleges-SQL.png" alt="" width="935" height="837" /></li>
+ 	<li>We are now going to return to the cPanel home page by clicking on the cPanel icon on the top left of the window. The next step in process is going to be to put the WordPress files into the Sub domain that we created. We need to download these from the WordPress website.</li>
+ 	<li>Go to wordpress.org. Click on the Download WordPress button. This will bring you to the Download WordPress page.
+<img class="alignnone size-full wp-image-39" src="http://wiki.devft.com/wp-content/uploads/2017/10/13-WordPress.png" alt="" width="934" height="976" /></li>
+ 	<li>On the Download WordPress page on the bottom right side of the page you will see a button for Download WordPress. Click this button. Right now the WordPress version 4.8.2. Download the latest version.  After it has downloaded we will be uploading the file to the subdomain through Cpanel.
+<img class="alignnone size-full wp-image-40" src="http://wiki.devft.com/wp-content/uploads/2017/10/14-Download-WordPress.png" alt="" width="936" height="851" /></li>
+ 	<li>On the cPanel home page click on the File Manager icon.
+<img class="alignnone size-full wp-image-41" src="http://wiki.devft.com/wp-content/uploads/2017/10/15-cPanel-homepage.png" alt="" width="958" height="886" /></li>
+ 	<li>This will lead you to the File Manager page. On the file manager page you will see in the left hand column a list of different files. Click on the public_html file. This will show all of the websites hosted on the server. You can scroll down the file tree in the left hand column or use the window on the right hand side; it will lead you to the same place to find your domain.
+<img class="alignnone size-full wp-image-61" src="http://wiki.devft.com/wp-content/uploads/2017/10/FileManager.png" alt="" width="960" height="922" /></li>
+ 	<li>Click on the sub domain you created. The files that are in the website will be displayed. Right now there should only be one file named cgi-bin and it is empty.
+<img class="alignnone size-full wp-image-67" src="http://wiki.devft.com/wp-content/uploads/2017/10/Select-Domain.png" alt="" width="957" height="923" /></li>
+ 	<li>Next we are going to upload the WordPress files to the website. On top of the page there is a menu bar, find the Upload button and click it.
+<img class="alignnone size-full wp-image-80" src="http://wiki.devft.com/wp-content/uploads/2017/10/upload.png" alt="" width="958" height="200" /></li>
+ 	<li>The Upload button will bring you to a new page called File Upload. There are two options to upload the files. I prefer to simply drag the file over or you can select it manually using the Select File button. Locate the <strong>*zipped*</strong> WordPress file we recently downloaded and upload it to the domain. Click the Go Back button once finished.
+<img class="alignnone size-full wp-image-70" src="http://wiki.devft.com/wp-content/uploads/2017/10/WordPress-Upload.png" alt="" width="952" height="609" /></li>
+ 	<li>Next we are going to extract the WordPress zip file. Right click on the WordPress zip file and click extract.
+<img class="alignnone size-full wp-image-81" src="http://wiki.devft.com/wp-content/uploads/2017/10/18-extract-1.png" alt="" width="955" height="901" /></li>
+ 	<li>A pop up will come up asking where you want the files to be extracted, press the Extract File(s) button. Another window will pop up showing the results, press the Close button.
+<img class="alignnone size-full wp-image-72" src="http://wiki.devft.com/wp-content/uploads/2017/10/18-extract-window.png" alt="" width="594" height="332" /></li>
+ 	<li>Now that we have the WordPress zip file extracted we no longer need it. Go ahead and delete the WordPress zip file by right clicking on it and clicking delete. A window will come up asking if you want to skip the trash and permanently delete the files. Click the checkbox and then click the Confirm button.
+<img class="alignnone size-full wp-image-73" src="http://wiki.devft.com/wp-content/uploads/2017/10/19-delete-wordpress-zip.png" alt="" width="611" height="286" /></li>
+ 	<li>The next step is moving the files inside of the WordPress folder to the root level of the domain. Double click on the WordPress file to access its content. Select all files. This can be achieved a few different ways. You can click the first file, hold down the shift key and click the last file. Another way built into cPanel is the <strong>Select All</strong> button on menu bar inside of the window displaying all of files.
+<img class="alignnone size-full wp-image-82" src="http://wiki.devft.com/wp-content/uploads/2017/10/20-select-all-1.png" alt="" width="957" height="917" /></li>
+ 	<li>Once all files are selected we are going to click on the <strong>Move</strong> icon right next to the Upload icon that we used earlier.
+<img class="alignnone size-full wp-image-83" src="http://wiki.devft.com/wp-content/uploads/2017/10/Move.png" alt="" width="956" height="192" /></li>
+ 	<li>A move window will pop up and ask you what path you want to move this file to.
+<img class="alignnone size-full wp-image-75" src="http://wiki.devft.com/wp-content/uploads/2017/10/21-Move-A.png" alt="" width="519" height="360" /></li>
+ 	<li>We are going to the root level of the domain, all we need to do is delete the <strong>/wordpress</strong> at the end of the extension and press the Move File(s) button.
+<img class="alignnone size-full wp-image-45" src="http://wiki.devft.com/wp-content/uploads/2017/10/21-Move-B.png" alt="" width="510" height="355" /></li>
+ 	<li>The WordPress folder will now be empty. Click the <strong>Back</strong> button on the menu bar until you reach the root level displaying all of the files we just moved including the cgi-bin file.
+<img class="alignnone size-full wp-image-84" src="http://wiki.devft.com/wp-content/uploads/2017/10/Back.png" alt="" width="956" height="190" /></li>
+ 	<li>Permanently delete the WordPress folder we just moved everything out of, it is now empty and will not be used.
+<img class="alignnone size-full wp-image-85" src="http://wiki.devft.com/wp-content/uploads/2017/10/21-Move-Final-final.png" alt="" width="958" height="918" /></li>
+ 	<li>Next we will be adding in our plugin into the website. Go to <a href="http://seed.devft.com/wp-content/plugins.zip">http://seed.devft.com/wp-content/plugins.zip</a> to download the file. (Clicking the link will download the file)</li>
+ 	<li>Next we are going to go into the wp-content folder and delete the plugins folder.
+<img class="alignnone size-full wp-image-87" src="http://wiki.devft.com/wp-content/uploads/2017/10/30-1.png" alt="" width="949" height="679" /></li>
+ 	<li>After deleting the folder we are going to do the same file upload process. This time we will be upload the recently downloaded plugins.zip file.Upload it to the same location that you deleted the original plugin folder.
+<img class="alignnone size-full wp-image-88" src="http://wiki.devft.com/wp-content/uploads/2017/10/PLUGIN.png" alt="" width="948" height="591" /></li>
+ 	<li>Now that the zipped plugin folder is downloaded, extract the content by right clicking on the plugin.zip and pressing the Extract button. Make sure the extracted files are there by refreshing the page and going back into the subdomain you created and navigating to the wp-content folder, go inside it and make sure the new plugin folder is there. We can now delete the plugins.zip folder because we are no longer going to be using it.</li>
+ 	<li>Next we will be making sure our website is using the correct database and not the default database. Go to the top of the window menu and click on the +File icon.
+<img class="alignnone size-full wp-image-89" src="http://wiki.devft.com/wp-content/uploads/2017/10/FILEUPLOAD.png" alt="" width="954" height="191" /></li>
+ 	<li>A window will pop up asking for the new file name, name the file <strong>wp-config.php</strong>. Click the Create New File button. The new file will now be on your domain.
+<img class="alignnone size-full wp-image-91" src="http://wiki.devft.com/wp-content/uploads/2017/10/WPCONFIG.png" alt="" width="956" height="914" /></li>
+ 	<li>We will now populate the wp-config.php file. On the root level of the files inside of your website, right click on the wp-config-sample.php file and click Edit.<img class="alignnone size-full wp-image-92" src="http://wiki.devft.com/wp-content/uploads/2017/10/WPCONFIG-EDIT.png" alt="" width="924" height="919" /></li>
+ 	<li>We are going to make a copy of this file. This is where the credentials of the database that we created earlier will come into play. We are going to select all text inside of the file by clicking anywhere on the php file and pressing CTRL-A. After selecting everything we are going to press CTRL-C to copy it. Close the window. Now right click on the wp-config.php file and click Edit. We are now going to paste the content from the wp-config-sample.php file to the wp-config.php file.</li>
+ 	<li>Next we are going to enter in our database credentials into the wp-config.php file. Starting on line 21 – 29 is the area of text we will change.
+<img class="alignnone size-full wp-image-49" src="http://wiki.devft.com/wp-content/uploads/2017/10/24-enter-credentials.png" alt="" width="582" height="198" /></li>
+ 	<li>On line 23 this where you put the name of the database we created. You will replace database_name_here with devft_nameofdatabase. On line 26 we will replace username_here with the devft_username we created earlier. On line 29 we copy and paste the password we created for our devft user. Press the Save Changes button in the top right corner of the window and then press the Close button.
+<img class="alignnone size-full wp-image-50" src="http://wiki.devft.com/wp-content/uploads/2017/10/24-enter-credentials-B.png" alt="" width="581" height="153" /></li>
+ 	<li>With the database and WordPress files set up we are now ready to go to the website and install the WordPress core files. Type in the name of the website that you created example: wiki.devft.com and it will auto direct you to wiki.devft.com/wp-admin/install.php. The screen will then pop up with a box asking what language you want to use. Choose accordingly. Click Continue.</li>
+ 	<li>Fill out form accordingly with username being the name of the website. <strong>Use wp@firetoss.com as the Email</strong>. Make sure you save these credentials in 1Password. On the form check the Discourage search engines from indexing the site check box. Then click on the Install WordPress button.
+<img class="alignnone size-full wp-image-52" src="http://wiki.devft.com/wp-content/uploads/2017/10/25-wp-install.png" alt="" width="905" height="902" /></li>
+ 	<li>Success! A success dialog box will pop up saying the website has been created and the now you can log into the website by pressing the Log In button and entering the credentials we just created.
+<img class="alignnone size-full wp-image-51" src="http://wiki.devft.com/wp-content/uploads/2017/10/25-success.png" alt="" width="874" height="562" /></li>
+ 	<li>Now that we are logged into the website the next step we are going to do is activating the plugins. Without activating the plugins we will get the white screen of death. On the left hand menu bar click on Plugins. This will show all the plugins that are currently installed.
+<img class="alignnone size-full wp-image-93" src="http://wiki.devft.com/wp-content/uploads/2017/10/PLUGINS.png" alt="" width="158" height="1021" /></li>
+ 	<li>By clicking on the check box next to the name of the plugin we can activate multiple plugins. We need to activate Advanced Custom Fields PRO, Advanced Custom Fields: Image Select, Bulk Page Creator, Gravity Forms, Rename wp-loging.php, WP Editor, WP-PageNavi. Scroll down to the bottom of the page and there will be a bulk action list icon. Click on it and select Activate and then click the Apply button. This will activate all checked plugins. A permalink Settings page will pop up. Just click the Save Changes button for now and if needed you can always come back and edit these settings.</li>
+ 	<li>The final step we will be doing is installing the Firetoss WordPress theme seed. Go to <a href="https://github.com/joshgreenie/ThemeSeed">https://github.com/joshgreenie/ThemeSeed</a> and click on the green Clone or Download button and then press the Download Zip button.
+<img class="alignnone size-full wp-image-53" src="http://wiki.devft.com/wp-content/uploads/2017/10/28-download-theme-seed.png" alt="" width="293" height="180" /></li>
+ 	<li>Next go the WordPress website that we just created. On the left hand sidebar menu click on Appearance and then click on Themes. Next we are going to click on the Add New button.
+<img class="alignnone size-full wp-image-95" src="http://wiki.devft.com/wp-content/uploads/2017/10/THEME.png" alt="" width="752" height="789" /></li>
+ 	<li>Next we are going to click on the Upload Theme button right next to the Add Themes text.
+<img class="alignnone size-full wp-image-97" src="http://wiki.devft.com/wp-content/uploads/2017/10/UPLOADsss.png" alt="" width="636" height="856" /></li>
+ 	<li>Next we will choose the theme seed file that we just downloaded. The file should be named ThemeSeed-master.zip. Click the Install Now button. Click the Activate link and we are done! Great work.
+<img class="alignnone size-full wp-image-98" src="http://wiki.devft.com/wp-content/uploads/2017/10/THEMEsss.png" alt="" width="1877" height="480" /></li>
+</ol>
+&nbsp;]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2017/10/wiki.txt]]></attachmenturl>
+		<categories><![CDATA[Departments>Web]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[96]]></id>
+		<title><![CDATA[The History of Firetoss]]></title>
+		<content><![CDATA[<strong>In The Beginning</strong>
+
+<span style="font-weight: 400;">In the beginning, there was Tony Passey and Brandon Richards. They had man crushes on each other while in an undergraduate design class at the University of Utah sometime in 2010. They looked at each other often. </span>
+
+<span style="font-weight: 400;">One day, they decided to take their relationship to the next level. They spoke to one another and there was much rejoicing. </span>
+
+<span style="font-weight: 400;">During an especially intimate conversation, they decided that it would be super rad if there were some type of opportunity available for graphic/web design, video, and coding students in the which they could utilize their budding abilities for the good of local smbs while receiving a modest monetary compensation. </span>
+
+<span style="font-weight: 400;">Polevault Media was birthed. </span>
+
+<span style="font-weight: 400;">They took their idea to the Technology Commercialization Office (TCO) of the University of Utah who took great interest in the endeavor of these two young and spry individuals. Their interest was so great that they offered a simple contribution of some office space and enough funding to buy a handful of Mac computers and an Apple Airport Express which served as both the company wireless router and file storage. </span>
+
+<span style="font-weight: 400;">They interviewed and hired a few select individuals for the opportunity and sold their first contracts. </span>
+
+<span style="font-weight: 400;">On a steady diet of cereal and Mt. Dew, they learned, they produced, they loved. </span>
+
+<strong>Enter the E</strong><strong>ra of MBAs</strong>
+
+<span style="font-weight: 400;">Tony awoke one morning and realized that he himself would soon be graduating. He soon understood the full weight of this dilemma. Polevault Media was for the student and by the student. “No no. This must not stand!” he declared to himself. </span>
+
+<span style="font-weight: 400;">He consulted with his Partner and they decided that Tony should take his leave of absence from the company while Brandon remained as the CTO to help lead and guide the young minds and future leaders of this great nation. </span>
+
+<span style="font-weight: 400;">This presented yet another conundrum, who would handle the overall management, sales, and accounting of the company? </span>
+
+<strong>Phase III: The Awakening</strong>
+
+<span style="font-weight: 400;">It is now the summer of 2013. What a summer it was. Co-founder and majority owner Tony Passey has begun to think that his hiatus from his own creation may be coming to an end. </span>
+
+<span style="font-weight: 400;">During his time away, he has gained a vast amount of knowledge in the fields of Digital Marketing and Lead Generation. He says, “Hey, we are going to do Digital Marketing and maybe Lead Generation at Polevault and we are going to become a real company now and stop with our intern model which doesn’t allow real growth because we have employee turnover of 75% every year because students graduate with a good skillset and go work for another company that pays them more money than we do so what if we called some of those former interns back and hire them to work for our company so that we can retain some of own talent and start growing by delivering better products which will allow us to get better clients who will give us more money because it’s a reciprocal cycle and oh yeah we are now Polevault Agency instead of Polevault Media.”</span>
+
+<span style="font-weight: 400;">And that is how Polevault started doing digital marketing and also started down a path of growth that would fuel the fire of desire to eventually land on the list of Utah’s top 100 growing companies. </span>
+
+<strong>Get on outta here with that Polevault Media</strong>
+
+<span style="font-weight: 400;">As previously mentioned, Polevault Media became Polevault Agency. The company also moved from our shared office space in the TCO building to our own office space downtown. </span>
+
+<span style="font-weight: 400;">We bought new chairs as well as desks from IKEA. </span>
+
+<span style="font-weight: 400;">And Jason Tang joined the company. </span>
+
+<strong>Our Own Home</strong>
+
+<span style="font-weight: 400;">The company continued to grow and prosper. Firetoss quickly outgrew its accommodations and more than likely our welcome at this particular office location. The company needed a new home that could grow along with Firetoss and stand up to the unique...culture that had developed. </span>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[101]]></id>
+		<title><![CDATA[Time Off Policy]]></title>
+		<content><![CDATA[Employees are allowed to take as much time off as they desire, with the following stipulations:
+<ul>
+ 	<li>All time off must be approved by the employee's direct supervisor.</li>
+ 	<li>Requests for time off should be submitted at least two weeks in advance. Failure to do so may result in the request not being approved.</li>
+ 	<li>Approval for time off requests will be determined by:
+<ul>
+ 	<li>Employee's past work performance</li>
+ 	<li>Status of projects and deadlines the employee is involved in</li>
+ 	<li>Number of others who have already requested that time period off</li>
+ 	<li>Additional factors as deemed appropriate by the direct supervisor</li>
+</ul>
+</li>
+</ul>
+Time off requests should be submitted via email. If a request is denied, the reasons will be supplied by the employee's direct superior. If a request is approved, the employee's superior will add that time off period to the Firetoss Google Calendar, and invite the employee to that event.]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[102]]></id>
+		<title><![CDATA[Key Holder Agreement]]></title>
+		<content><![CDATA[We are placing a lot of trust in you and giving you a key.  We ask three things in return:  Take Ownership, Be Responsible, and Give Ownership.
+
+<strong>Take Ownership:</strong>
+<ul>
+ 	<li>You will not loan out the key.</li>
+ 	<li>You will not duplicate the key.</li>
+ 	<li>You will keep the key safe.</li>
+ 	<li>You will only use the key as a key.</li>
+</ul>
+<strong> </strong><strong>Be Responsible:</strong><strong> </strong>
+<ul>
+ 	<li>You will immediately report to management if your key is lost or stolen.</li>
+ 	<li>You will only use the key so that you can work or engage in work-related activities.</li>
+ 	<li>You will ensure that all office doors are locked if you are the last person to leave.</li>
+ 	<li>You will not invite unauthorized individuals to enter the office.<strong> </strong></li>
+</ul>
+<strong>Give Ownership:</strong><strong> </strong>
+<ul>
+ 	<li>You will assume responsibility for the consequences of not complying with the items listed in this agreement.</li>
+ 	<li>You will return the key upon request.</li>
+</ul>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[104]]></id>
+		<title><![CDATA[The Pillars]]></title>
+		<content><![CDATA[Here at Firetoss, we try to make decisions and communicate through what we feel are the pillars of our company:  Our People, Systems, Product, Pipeline, Finance, and Culture.  Each pillar is critical to success.  The pillars work together to elevate each other – a clear example being that an excellent Product will be easier to sell and thus will improve our Pipeline.
+
+As you work, you should be mindful of these pillars and think about how your activity impacts them.  Always think of what new initiatives you can do that will improve our pillars.
+
+<img class="size-full wp-image-130 aligncenter" src="http://wiki.devft.com/wp-content/uploads/2017/11/FT-Pillars-Stick-Figures.jpg" alt="" width="1000" height="200" />]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>The Pillars]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[105]]></id>
+		<title><![CDATA[People]]></title>
+		<content><![CDATA[The most important aspect of Firetoss is its People.  You were chosen to work here because you are smart, trust-worthy, and capable of improving the company.  You are trusted to work hard, and you are expected to elevate every pillar of Firetoss.  Always communicate what is awesome and what sucks about your job.  Tell anyone and everyone your ideas to make this a better place to work.  Take initiative – this is <em>your</em> company.
+
+Also consider that the “People” pillar of the company is more than just you.  Who do you know that would be an amazing addition to Firetoss?  What is an amazing addition to Firetoss that you <em>don’t</em> know, but you could find by developing a killer recruiting System?
+
+Consider the People around you.  Communicate.  Share your knowledge.  Help out.  Consider the people NOT around you.  You have skills and knowledge that somebody in another department lacks.  HELP OUT.  We are all part of the same company, and one person’s success benefits everyone.
+
+<img class="size-full wp-image-131 aligncenter" src="http://wiki.devft.com/wp-content/uploads/2017/11/FT-People-Stick-Figures.jpg" alt="" width="1000" height="200" />]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>The Pillars]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[106]]></id>
+		<title><![CDATA[Systems]]></title>
+		<content><![CDATA[At Firetoss, you will be given a lot of freedom and flexibility to do your work.  Do whatever you need to do in order to produce the best Product.  Go for a walk.  Take a Siesta.  Play Pool.  There is not as much structure at Firetoss as there is at most other companies - you are simply trusted to do excellent work and meet your deadlines.
+
+That said, there are still processes that you should follow (such as tracking your time).  Systems are important for maintaining a level of consistency in our Products, client communication, and growth.  But, mostly, they are there so that we don’t forget important stuff.  Systems, like time tracking, are ways to monitor how we are doing as a company – plus they make Accounting happy.
+
+You should communicate if you feel that a System is holding you back.  Even better, you should find ways to improve that System or even initiate new System that could benefit other people.  Systems should be channels for you to either demonstrate your awesomeness or to influence the people around you.  But please track your time.
+
+Seriously. Track your time.
+
+<img class="aligncenter size-full wp-image-144" src="http://wiki.devft.com/wp-content/uploads/2017/11/FT-Systems-Stick-Figures.jpg" alt="" width="1000" height="200" />]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>The Pillars]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[107]]></id>
+		<title><![CDATA[Product]]></title>
+		<content><![CDATA[If you combine People and Systems you end up with a Product.   It is critical that we deliver an amazing product.  By nature, the websites we build will be seen by a large amount of people, all with our name at the bottom.  If we Market well, we reach tons of people.  We must take special care with everything we do.
+
+Our Product is much more than just what is delivered to the customer - it is our reputation.  Our Product is the experience that a client has when he or she calls us for help with a problem. Our Product is what a person thinks of us after visiting our website or our office.  Firetoss generates the majority of its business from past clients and referrals, so we must execute well in order to grow.
+
+Think about <em>your</em> Product.  Your coworkers are also your customers.  If you deliver an amazing product to the next person in the process, they will be able to create a better Product themselves.  A website will be better developed with an awesome design.  Marketing will be able to get better results with a good Strategy.  Our websites will satisfy the client better if they are sold with the right expectations.
+
+<img class="aligncenter size-full wp-image-147" src="http://wiki.devft.com/wp-content/uploads/2017/11/FT-Product-Stick-Figures.jpg" alt="" width="1000" height="200" />]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>The Pillars]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[108]]></id>
+		<title><![CDATA[Pipeline]]></title>
+		<content><![CDATA[If we deliver amazing Products then more people will want to pay us.  That is our Pipeline – get to know it.  The more money the company brings in, the more fun stuff we can do, the more cool swag we get, and the more we get paid.
+
+The best way to improve our Pipeline is to encourage and support the Sales team.  Our Sales staff should be radiant with confidence.  High five them and tell them good job.  Ask them what’s comin’ down the pipe.  Remind them that you have a dog to feed.  Most of all - support them by doing good work.  It is much easier to sell confidently when you are backed up by a team that can deliver an amazing Product on time.
+
+The Pipeline can influence you.  How will you make sure that you can execute on both your current project and the next project?  Are there new skills you can learn to take on some of the more exciting projects in the Pipeline?  Think even bigger.  What does the future of Firetoss look like, where do you fit in that future, and how are you going to be ready for it?
+
+<img class="aligncenter size-full wp-image-148" src="http://wiki.devft.com/wp-content/uploads/2017/11/FT-Pipeline-Stick-Figures.jpg" alt="" width="1000" height="200" />]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>The Pillars]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[109]]></id>
+		<title><![CDATA[Finance]]></title>
+		<content><![CDATA[Money!  The reason we work.  Firetoss is a payroll-heavy company that rewards great People. But if you want Firetoss to be concerned with your Finance, you need to be concerned with its Finance.  The more money Firetoss makes, the more money you get for Legos.
+
+You are directly responsible for protecting the company’s Finance.  Do not do client work for free.  Make sure there is a contract, and If a client requests that you do work that is not in the contract, refer them to Sales or sell it yourself.  Also, be ready to hear “Stick to the Budget” way too many times.
+
+Always think about how you can help the company improve its Finance.  Do you have any ideas that we could add to our Products and sell them for more?  Are there new Products we can sell?  Do you know another software that does the same thing, but cheaper?  Do you really need that side order of fries with your Friday Lunch?   (Always get the fries)
+
+<img class="aligncenter size-full wp-image-146" src="http://wiki.devft.com/wp-content/uploads/2017/11/FT-Finance-Stick-Figures.jpg" alt="" width="1000" height="200" />]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>The Pillars]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[110]]></id>
+		<title><![CDATA[Culture]]></title>
+		<content><![CDATA[Culture is the beginning, end, and everything between of what we do.  It creates the pillars and it can knock them down.  It might be where you have the biggest impact on the company.  There is nothing to tell you here, rather you’ll have to show Firetoss your culture.  But here are some rules:
+<ul>
+ 	<li>Be awesome.</li>
+ 	<li>Work Hard.</li>
+ 	<li>Learn every day.</li>
+ 	<li>Communicate</li>
+ 	<li>Represent the company well.</li>
+ 	<li>Make this a place that you want to be at.</li>
+</ul>
+<img class="aligncenter size-full wp-image-145" src="http://wiki.devft.com/wp-content/uploads/2017/11/FT-Culture-Stick-Figures.jpg" alt="" width="1000" height="200" />]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>The Pillars]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[113]]></id>
+		<title><![CDATA[Glossary]]></title>
+		<content><![CDATA[<strong>The Budget </strong>- It's like dried-up hot sauce, elmer's glue, and tree sap mixed together and thrown onto some fly paper:  you'll stick to it.
+
+<strong>Culture</strong> – The essence of everything we do.
+
+<strong>Finance</strong> – Why we’re here.
+
+<strong>Halloween </strong>- If you don't dress up, don't bother coming to work.  You're not allowed to have the day off.
+
+<strong>People</strong> – Most of them suck if they’re not Firetoss employees.
+
+<strong>Pipeline</strong> – The line of companies waiting to give us money.
+
+<strong>PPC</strong> – Pay Per Click.  Those Ads at the top of Google searches cost money.  If you have a second, click on our competitor’s Ads.
+
+<strong>Product</strong> – What outsiders see.  Hopefully it’s not gross or domestic.
+
+<strong>Roadhouse - </strong>The pool room that is sometimes desecrated with internal meetings.
+
+<strong>Jaron Robbins</strong> – MBA
+
+<strong>SEO</strong> – Search Engine Optimization.  Trying to decipher Google’s complicated algorithms for financial gain.  Don’t click on our competitor’s links.
+
+<strong>Systems</strong> – Processes.  Procedures.  Pains in the butt.]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Firetoss General]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[118]]></id>
+		<title><![CDATA[Sales to Production Handoff]]></title>
+		<content><![CDATA[<h2>The Process</h2>
+A lead is identified (Corp Marketing)
+- Lead must be entered into Zoho and assigned to a Sales Rep
+
+A lead is qualified (Sales Rep)
+- Lead in Zoho must be converted to an account
+- Potential(s) must be added to that account
+
+A quote is provided (Sales Rep)
+- Digital copy of quote should be uploaded to appropriate potential
+- NOTE: Terms other than Annual Contracts paid monthly and 50/40/10 Projects must be approved by the Accounting Team before being sent to client
+- NOTE: Quotes outside of our normal offerings must be approved by VP of Sales before being sent to the client
+- NOTE: Quotes should be approved by the VP of Sales before submitted to client
+
+A quote is accepted/signed (Sales Rep)
+- Potential set as "Closed/Won" <em>after</em> all required paperwork is completed
+- Zoho will alert Accounting and Production of Potential being Won
+
+Paperwork is processed (Accounting) (This happens simultaneously with Initial Client Contact)
+- Accounting processes paperwork
+- Accounting sends invoice for initial deposit
+- Accounting uploads, or copies over digital paperwork from Potential to Account
+- If any issue is discovered, Accounting will alert Sales and Production teams accordingly
+
+Initial Client Contact is made (Production Team) (This happens simultaneously with Paperwork Processing)
+- Team Lead sends out "Excited to work with you" email to client
+- Team Lead schedules internal kickoff with Sales rep
+- Team Lead schedules external kickoff with Sales rep and Client
+- Any identified inconsistencies are addressed
+
+Project officially begins on external kickoff date
+<h2>Timelines</h2>
+Target timeline from Client Signature to Initial Contact is two business days. To achieve this, the following must happen:
+<ul>
+ 	<li>Sales Rep submits <em>complete</em> paperwork, including initial deposit to accounting, at same time as setting Potential as Closed-Won</li>
+ 	<li>Accounting processes paperwork same business day</li>
+ 	<li>Production team reviews contract, drafts and sends out initial email contact by next business day</li>
+</ul>
+Notes and Comments:
+- Previously, sales reps were responsible for scheduling internal and external kickoffs. This has changed.
+- Time from Signed Date and Project Start date is dependent on handoff to accounting, time to process paperwork, time to receive initial deposit, and client's availability for external kickoff]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Firetoss General]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[119]]></id>
+		<title><![CDATA[BI Product]]></title>
+		<content><![CDATA[We have a whitelabled BI solution! It has the following features:
+<ul>
+ 	<li>Single dashboard to show Quickbooks, Google Analytics, and WooCommerce metrics</li>
+ 	<li>Max of 45 metrics per dashboard</li>
+ 	<li>Potentially unlimited dashboards per client (see pricing)</li>
+ 	<li>Over 150 out-of-the-box integrations (see pricing)</li>
+ 	<li>Ability to integrate with any custom REST API (see pricing)</li>
+</ul>
+The login to our system is below:
+
+https://dashboard.firetoss.com/login
+Email: analytics@firetoss.com
+Password: FireT055!
+
+Note: All clients will utilize this same login. Their individual account will provide them access to their respective dashboards.
+
+Recommended Pricing Structure:
+<ul>
+ 	<li>Base price: $200/mo
+<ul>
+ 	<li>Initial setup of one of our template dashboards</li>
+ 	<li>Unlimited user accounts</li>
+ 	<li>One dashboard</li>
+</ul>
+</li>
+ 	<li>Additional dashboards: $100/mo per board</li>
+ 	<li>Custom metrics or modifications: $150/hour</li>
+ 	<li>25% discount for bundling with a marketing contract</li>
+</ul>
+Screenshots:
+
+<a href="/wp-content/uploads/2017/11/Investor.png">Grow Template Investor Dashboard</a>
+<a href="/wp-content/uploads/2017/11/Ecommerce.png">Grow Template Ecommerce Dashboard</a>
+<a href="/wp-content/uploads/2017/11/Marketing.png">Grow Template Marketing Dashboard</a>
+<a href="/wp-content/uploads/2017/11/Grow1.png">Firetoss Branded Login</a>
+<a href="/wp-content/uploads/2017/11/Grow2.png">Firetoss Branded Example Dashboard</a>
+<a href="/wp-content/uploads/2017/11/Grow3.png">Firetoss Branded Ecommerce Dashboard</a>
+
+&nbsp;]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Sales]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[139]]></id>
+		<title><![CDATA[Employee Exit Process]]></title>
+		<content><![CDATA[In Preperation:
+<ul>
+ 	<li>Inform employee of final day of work</li>
+ 	<li>Inform direct manager, senior level manager, and accounting</li>
+ 	<li>Accounting to inform BBSI
+<ul>
+ 	<li>If insured, have employee complete an insurance change form</li>
+</ul>
+</li>
+ 	<li>Direct employee to sync any code/assets/files to appropriate systems</li>
+ 	<li>If client facing, create strategy for client migration</li>
+ 	<li>If assigned to projects, create strategy for project migration</li>
+ 	<li>If training replacement, create appropriate strategy</li>
+</ul>
+By last day:
+<ul>
+ 	<li>Ensure employee has synced code/assets/files</li>
+ 	<li>Recover any equipment assigned to employee</li>
+ 	<li>Recover office key/access, if any</li>
+ 	<li>Recover any credit cards or checks, if any</li>
+ 	<li>Disable accounts, and create backups of files if appropriate
+<ul>
+ 	<li>Harvest
+<ul>
+ 	<li>Archive user</li>
+</ul>
+</li>
+ 	<li>Asana
+<ul>
+ 	<li>Remove user from each applicable team</li>
+</ul>
+</li>
+ 	<li>Dropbox
+<ul>
+ 	<li>Delete user</li>
+ 	<li>assign files to scorch@firetoss.com</li>
+ 	<li>set files to delete from user's computer next time they come online</li>
+ 	<li>If warned about personal files, convert to an individual account instead</li>
+</ul>
+</li>
+ 	<li>1password
+<ul>
+ 	<li>Delete user</li>
+</ul>
+</li>
+ 	<li>Zoho CRM
+<ul>
+ 	<li>Archive user</li>
+</ul>
+</li>
+ 	<li>Zoho Projects
+<ul>
+ 	<li>Delete user</li>
+</ul>
+</li>
+ 	<li>Adobe Cloud
+<ul>
+ 	<li>Unassign license. Note: some use "shared" licenses</li>
+</ul>
+</li>
+ 	<li>Slack</li>
+ 	<li>QuickBooks</li>
+ 	<li>Gmail
+<ul>
+ 	<li>Make backup of user by logging into their account and going to https://support.google.com/accounts/answer/3024190?hl=en</li>
+ 	<li>Delete account from admin user, transfer files to scorch@firetoss.com when deleting</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Admin]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[140]]></id>
+		<title><![CDATA[New Hire Process]]></title>
+		<content><![CDATA[Accounting Tasks:
+
+TBD
+
+Equipment Allocation:
+
+TBD
+
+System Setup:
+<ul>
+ 	<li>Create firetoss gmail account (send login instructions to their personal email). All further setups should be sent to their firetoss gmail.</li>
+ 	<li>If appropriate, create:
+<ul>
+ 	<li>Harvest (if employee needs to track time)</li>
+ 	<li>Asana (if employee's team tracks tasks here)</li>
+ 	<li>Zoho CRM (if employee's role requires this)</li>
+ 	<li>QuickBooks (if employee's role requires this)</li>
+</ul>
+</li>
+ 	<li>Dropbox</li>
+ 	<li>1password</li>
+ 	<li>Slack</li>
+</ul>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Admin]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[143]]></id>
+		<title><![CDATA[New Site Checklist]]></title>
+		<content><![CDATA[[gravityform id="1" title="false" description="false"]]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[152]]></id>
+		<title><![CDATA[Buying Plugins for Clients]]></title>
+		<content><![CDATA[If a client requests us to install a plugin OR the functionality that the client wants requires a plugin:
+<ul>
+ 	<li></li>
+</ul>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[330]]></id>
+		<title><![CDATA[Overview]]></title>
+		<content><![CDATA[This is the employee portal for our payroll company. You can use this to view your check stubs, direct deposit, and other information.
+
+The TL;DR - go to https://bbsiportal.bbsihq.com/hrp/HrpWeb
+
+- Click Registration
+
+- Enter your info
+
+- Check your e-mail for your password
+
+- Log in, change your password]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2017/12/Employee-Self-Service-Set-Up-Guide.docx]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>Employee Portal]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[332]]></id>
+		<title><![CDATA[Expense Form]]></title>
+		<content><![CDATA[Please fill out the form and get it approved by your manager. Once complete, email the form and any receipts to accounting.
+<a href="http://wiki.devft.com/wp-content/uploads/2017/12/Interactive-Expense-Form.docx">Expense Form</a>
+
+[gravityform id="3" title="true" description="true"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2017/12/Interactive-Expense-Form.docx]]></attachmenturl>
+		<categories><![CDATA[Firetoss General>Forms]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[353]]></id>
+		<title><![CDATA[Driver Recruiting Process]]></title>
+		<content><![CDATA[This is the process that we go through to recruit truck drivers. This great material was created by Hans.
+
+[embeddoc url="http://wiki.devft.com/wp-content/uploads/2017/12/Lead-Gen-Process.pptx.pdf" download="none"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2017/12/Lead-Gen-Process.pptx.pdf]]></attachmenturl>
+		<categories><![CDATA[Departments>Lead Gen]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[358]]></id>
+		<title><![CDATA[Registration]]></title>
+		<content><![CDATA[[embeddoc url="http://wiki.devft.com/wp-content/uploads/2017/12/Registration.pdf" download="none"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2017/12/Registration.pdf]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>Employee Portal]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[361]]></id>
+		<title><![CDATA[Password Change]]></title>
+		<content><![CDATA[[embeddoc url="http://wiki.devft.com/wp-content/uploads/2017/12/Password.pdf" download="none"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2017/12/Password.pdf]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>Employee Portal]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[364]]></id>
+		<title><![CDATA[Employee Information]]></title>
+		<content><![CDATA[[embeddoc url="http://wiki.devft.com/wp-content/uploads/2017/12/Employee-Information.pdf" download="none"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2017/12/Employee-Information.pdf]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>Employee Portal]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[368]]></id>
+		<title><![CDATA[Payroll Information]]></title>
+		<content><![CDATA[[embeddoc url="http://wiki.devft.com/wp-content/uploads/2017/12/Payroll-Information.pdf" download="none"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2017/12/Payroll-Information.pdf]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>Employee Portal]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[370]]></id>
+		<title><![CDATA[Password Retrieval]]></title>
+		<content><![CDATA[[embeddoc url="http://wiki.devft.com/wp-content/uploads/2017/12/Password-Retrieval.pdf" download="none"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2017/12/Password-Retrieval.pdf]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>Employee Portal]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[376]]></id>
+		<title><![CDATA[Dat Cache]]></title>
+		<content><![CDATA[<div class="markdown-body">
+          <p><em>If magento isn't added to your PATH, you may need to do add <code>php</code> to the beginning of these commands.</em></p>
+<p><strong>For clearing the cache:</strong></p>
+<p><code>bin/magento cache:clean</code></p>
+<p><strong>For indexing new xml files:</strong></p>
+<p><code>bin/magento index:reindex</code></p>
+<p><code>bin/magento cache:clean</code></p>
+<p><strong>For updating or adding new plugins:</strong></p>
+<p><code>bin/magento setup:upgrade</code></p>
+<p><code>-d memory_limit=-1 bin/magento setup:static-content:deploy</code></p>
+<p><em>the memory_limit flag is to avoid changing php.ini just so we can compile. You can omit it if you aren't running out of memory.</em></p>
+<p><code>bin/magento index:reindex</code></p>
+<p><code>bin/magento cache:clean</code></p>
+<p><strong>If you need a "complete refresh":</strong></p>
+<p><code>bin/magento setup:upgrade</code></p>
+<p><code>-d memory_limit=-1 bin/magento setup:di:compile</code></p>
+<p><code>-d memory_limit=-1 bin/magento setup:static-content:deploy</code></p>
+<p><code>bin/magento index:reindex</code></p>
+<p><code>bin/magento cache:clean</code></p>
+
+        </div>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web>Magento]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[378]]></id>
+		<title><![CDATA[Restoring S3 Backups]]></title>
+		<content><![CDATA[<div class="markdown-body">
+          <p>Amazon S3 is the service we use to store our server backups. If you need to restore a backup or clone a site, downloading from S3 is likely the quickest way to do so.</p>
+<p>Upon logging in and navigating to S3, you should be presented with the following screen:</p>
+<img src="https://camo.githubusercontent.com/ac8db22024c01ecb622f6a770e6da238bc61e768/68747470733a2f2f692e696d6775722e636f6d2f6e55664842754d2e706e67" alt="S3 Dashboard" data-canonical-src="https://i.imgur.com/nUfHBuM.png">
+<p>The Devft bucket contains Wordpress, Devft, and Magento backups.</p>
+<p>Once you find the archive file (tar.gz) you want to download, give it a click.</p>
+<img src="https://camo.githubusercontent.com/2a151f41b285dc7869523d74ab1ad5e80e44d5af/68747470733a2f2f692e696d6775722e636f6d2f363976485063772e706e67" alt="File Options" data-canonical-src="https://i.imgur.com/69vHPcw.png">
+<p>Click "Make Public" and copy the link.</p>
+<p>Inside the desired folder, <code>mkdir tmp</code> and <code>cd tmp</code></p>
+<p>On the destination server. use <code>wget</code> to download the archive from the link you just copied.</p>
+<p>Extract the files using <code>tar -xzvf filename.tar.gz</code></p>
+<p>You should now have something similar to this:</p>
+<img src="https://camo.githubusercontent.com/2cf09388b53bed82425e1348b207faf851144427/68747470733a2f2f692e696d6775722e636f6d2f526a37663047572e706e67" alt="Archive Contents" data-canonical-src="https://i.imgur.com/Rj7f0GW.png">
+<p>The site files are inside of <code>homedir/public_html</code>. You can do <code>mv homedir/public_html/* /home/devft/somesite.devft.com</code></p>
+<p>Then you just need to import the database which is inside the <code>mysql</code> directory. You can do so logged in as root with <code>mysql desired_db &lt; databasefile.sql</code></p>
+<p>Now that the files are moved, you can move up a directory (<code>cd ..</code>) and <code>rm -rf tmp</code></p>
+<p>Finally, if it's a Wordpress installation you just need to update URLs in the database. You can easily do this with <code>wp search-replace http://olddomain.com http://newdomain.com</code></p>
+
+        </div>
+]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[384]]></id>
+		<title><![CDATA[Footer Links]]></title>
+		<content><![CDATA[Design team,
+<div></div>
+<div>Please be aware that, as of 11am on January 17th, 2018, Tony has decreed that we will by default put the "Web Design by Firetoss" links in the footer of sites we build. It will be the Design team's responsibility to make sure it's included on all designs. Unless a client specifically requests it be removed. In which case we'll be cool with that.</div>
+<div></div>
+<div>Additionally, the Marketing team is coming up with a "deep link" strategy (i.e. like in the Legend of Zelda when you swim really far underwater to Zora's Domain). They will provide us with a list of <a href="http://firetoss.com/" target="_blank" rel="noopener" data-saferedirecturl="https://www.google.com/url?hl=en&amp;q=http://firetoss.com&amp;source=gmail&amp;ust=1516309965958000&amp;usg=AFQjCNF97L5rpZHjy5_bS9YrVHeViclnhQ">firetoss.com</a> sub pages, the verbiage for the associated link, and the frequency of links that should be that way. (this article will be updated at that point)</div>
+<div></div>
+<div>Once we get that, we'll have our support team gradually go through the sites we host and add in the appropriate footer link.</div>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web>Design]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[386]]></id>
+		<title><![CDATA[Basic Wordpress On-Site Optimization]]></title>
+		<content><![CDATA[New to on-site optimization? Well let's take a look at some basic wordpress elements and explore the ways to make changes to improve SEO for wordpress-based websites.
+
+&nbsp;
+
+<span style="text-decoration: underline;"><strong>BASIC WORDPRESS NAVIGATION</strong></span>
+
+There are a few basic navigation tools you will find on the back-end of all wordpress sites. Keep in mind that SOME of these navigation tools (such as Yoast) are plugins which may or may not be installed on the site you're working on.
+
+<img class="alignnone size-full wp-image-387" src="http://wiki.devft.com/wp-content/uploads/2018/01/On-Site-Optimization-Wordpress-Navigation.png" alt="" width="1028" height="578" />
+
+&nbsp;
+
+<span style="text-decoration: underline;"><strong>Elements of a Page/Product/Post</strong></span>
+
+There are several elements that make up a basic web page, product page or blog post.
+
+<strong><em>Meta Descriptions &amp; Titles</em></strong>
+<ul>
+ 	<li>Meta descriptions focus on the highest traffic pages first (for large websites). It is important to add page-targeted keywords to the Meta Titles and you must make sure that both the title AND the descriptions sell your brand/story and entice your searcher to click through to view your page.</li>
+ 	<li>Your Meta Description is PRIME REAL ESTATE so be sure to watch the length. You can preview your description to make sure that it is not cut-off. Cut-off metas are often viewed as wasteful and tacky to the user and may have a negative impact on your CTR (click-thru rate).</li>
+ 	<li>When writing a meta description, you can use the last part to highlight something unique about your site or to offer an additional benefit to the searcher. EX: Free Shipping!, Best Savings on Laptops!, Widest Selection of Kid's Horse Jumps!.</li>
+ 	<li>If you have pages that you don't want to accidentally rank, you MUST use the Yoast Plugin to set them to "noindex." Some pages that you might want to consider for noindex are: My Account, Cart, Pagination (page 2,3,4,5 etc. of a product category or search)</li>
+ 	<li>If you do NOT create your own meta descriptions for each page, you may get unwanted results displaying to searchers. In a best case scenario the meta will pull some relevant, but boring description from your page's content, but in a worst case scenario you could end up with something completely irrelevant and hard to read! (see below for examples)</li>
+</ul>
+&nbsp;
+
+Best Case Scenario:
+
+<img class="size-full wp-image-389 alignnone" src="http://wiki.devft.com/wp-content/uploads/2018/01/meta-best-case.png" alt="" width="739" height="91" />
+
+&nbsp;
+
+Worst Case Scenario:
+<img class="size-full wp-image-390 alignnone" src="http://wiki.devft.com/wp-content/uploads/2018/01/meta-worst-case.png" alt="" width="712" height="93" />
+
+<span style="text-decoration: underline;">PRO TIP</span>: From an SEO ranking perspective, having your keyword in the description is not 100% necessary, but it will be <strong>BOLDED</strong> which may entice your searchers to click on your listing!
+
+<img class="alignnone size-full wp-image-388" src="http://wiki.devft.com/wp-content/uploads/2018/01/Meta-Descriptions.png" alt="" width="1383" height="329" />
+
+<strong>How to edit your meta descriptions:</strong> go to page/product/category in the menu, then under the Yoast plugin click "edit snippet"
+
+<hr />
+
+<em><strong>Content Review &amp; Optimization</strong></em>
+
+When you are reviewing content on the site there are several opportunities to improve keyword placement and optimization. Here is a quick checklist that you can go through to harvest some "low hanging fruit" for content optimization!
+<ul>
+ 	<li>Improve the use of Target keywords throughout the content
+<ul>
+ 	<li>Is your keyword in the title, important headers, and the body?</li>
+</ul>
+</li>
+ 	<li>Make sure that important information is not missing from the pages
+<ul>
+ 	<li>Is the content too long or too short? Can the customer easily and quickly find answers to their important questions?</li>
+</ul>
+</li>
+ 	<li>Does the page currently have a Call to Action? Where is it located?
+<ul>
+ 	<li>If the page needs a CTA, make sure that you place it in the correct spot! 99.99% of the time it should be in a prominent location above the fold.</li>
+</ul>
+</li>
+</ul>
+Yoast is also a GREAT guide to help you with optimizing content. However, don't worry if every page on your site isn't "Yoast Optimized." Category and product pages don't always work the same way that content heavy and blog pages do. When you are using Yoast, make sure that they keyword you've designated in your KWR and Meta descriptions is your focus. And, as always, make sure that your content reads naturally and isn't just stuffed with a bunch of keywords!!!
+
+<hr />
+
+<em><strong>H-Tag Hierarchy</strong></em>
+
+H-tags (or heading tags) are used for.....the creation of Headings! *gasp!* These headings are what makes it easy for Google to crawl and understand what your page is all about in order to list you correctly on the SERPs.
+
+H-tags are broken out into numerical categories with H1 tags being the most important followed by H2, H3, etc. H1 tags are typically the title of the post or page and is typically the biggest heading visually as well. They H1 tags are not typically your brand or product name but are more likely to be the topic that the page is covering. Make sure that there is only ONE H1 tag per page because Google uses that tag as a major page-ranking factor. <img class="alignnone size-full wp-image-391" src="http://wiki.devft.com/wp-content/uploads/2018/01/H-Tag-Hierarchy.png" alt="" width="1001" height="405" />
+
+<hr />
+
+<em><strong>Internal Linking</strong></em>
+
+Internal linking simply refers to adding links into your page's content which link to other pages on your site. Many times there is a more appropriate page to go in-depth on a topic that is mentioned on a blog or a product page so this is where internal linking comes in handy. Google also sees internal links as a way of showing website page hierarchy. The more internal links that there are to a page, the more important that page must be. This is similar to the way that quality external links make your site more credible in the ever-loving eyes of Google.
+
+You can either add or optimize internal links as part of your content optimization or you can make it a completely separate step in the on-page optimization process. The most important thing to keep in mind is to make sure your links point to important and related pages in relation to your content. Use keywords as an anchor text for the pages you're linking to and avoid using phrases like "click here" or "read more." A good practice to get into is inserting a link near the end of the page content that helps the user continue through the funnel and find more information on a topic.
+
+<hr />
+
+<strong><em>Image Optimization</em></strong>
+
+There are several things to consider with image optimization in relation to responsiveness and site layout/design but for the purpose of this training we will focus on Alt text, titles, captions, and the like.
+
+When Google crawls a website they cannot actually view and decipher the images that are displayed to users. Instead they rely on text cues to tell them what a picture is displaying. Your Image Title and Alt Text are what tells google what the image is and why you are using it on your site.
+
+The Alt Description is more important to Google since that is the information that shows up in Google's image search. The Alt Description should explain what you ACTUALLY see and include the keyword only if it is RELEVANT to the image! The best place to include your keyword is actually in the Image Title, as this works as a hover-over caption on some Wordpress themes.
+
+<span style="text-decoration: underline;">Good and Bad Alt Text Examples</span>
+
+<strong>GOOD</strong>
+
+<img class="alignnone size-full wp-image-393" src="http://wiki.devft.com/wp-content/uploads/2018/01/Good-Alt.png" alt="" width="593" height="256" />
+
+Title: Home efficiency window replacement
+Alt Tag: Modern brick-style home with tinted windows
+
+&nbsp;
+
+<strong>BAD</strong>
+
+<img class="alignnone size-full wp-image-392" src="http://wiki.devft.com/wp-content/uploads/2018/01/Bad-Alt.png" alt="" width="414" height="275" />
+
+Title: Firetoss Best Local SEO, Web Development, Utah SEO Agency
+Alt Tag: Firetoss SEO, Firetoss Web Design, Local SEO, SEO, Search Engine Optimization
+
+&nbsp;
+
+Here's what would make the "Bad" example "Good":
+Title: Firetoss Marketing Team Elan Maj
+Alt Tag: Firetoss SEO Frat star and cougar Account Manager, Elan Maj
+
+<em>How to update image descriptions</em>
+<ol>
+ 	<li>Click on "Media" in the left navigation to access the media library</li>
+ 	<li>If there are hundreds of photos, sort by month so you don't get lost, angry, and question the meaning of your life</li>
+ 	<li>Click on the photo you want to optimize. This will allow you to access the URL, Title, Caption, Alt Text, and Description</li>
+</ol>
+<span style="text-decoration: underline;">PRO TIP:</span> pay attention to what page the photo is uploaded to! This may help you with coming up with a title. Take breaks often, and don't overthink this!
+
+<hr />
+
+<strong><em>Fixing Broken Links and Crawl Errors</em></strong>
+
+There are several reasons why you may run into 404 (broken/missing page) errors but the most important thing is that you FIX THEM! Having broken pages provides a very poor user experience for anyone coming to the site, and is likely to reduce conversions and increase bounce rate and other metrics. These types of errors also alert Google to the fact that you may not have a reputable site and they will penalize you.
+
+<strong><span style="text-decoration: underline;">How to Identify Crawl Errors</span></strong>
+
+You can quickly identify any errors by checking Search Console and accessing "Crawl Errors." You can also run a site audit in Raven Tools and check link issues. Site errors like 500 Server errors are a BIG issue and should be fixed IMMEDIATELY. You may need the help of the web team to fix these types of errors. 404 errors are a problem if they are showing up for important pages on your site. If you are working on an e-commerce site, there will be 404 errors for products that have been removed. If there are similar products or if the product has been re-categorized you should set up a re-direct to fix the error. If the product is simply no longer available, this isn't a very big deal.
+
+<span style="text-decoration: underline;"><strong>Fixing these Errors</strong></span>
+<ol>
+ 	<li>Click on "settings" on the left-side navigation in wordpress</li>
+ 	<li>Check for a re-direct plugin (install 301 redirect or Bulk Redirects if they aren't there)</li>
+ 	<li>Enter the URL that you want to redirect and the page you want the redirect to go to. Some plugins will ask if you want a 301 or 302 redirect- 302 redirects are short term redirects (out of stock products) and should rarely be used.</li>
+</ol>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing>Marketing Training]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[399]]></id>
+		<title><![CDATA[Electronic W-2]]></title>
+		<content><![CDATA[Use this information to access your W-2.
+
+[embeddoc url="http://wiki.devft.com/wp-content/uploads/2018/01/2017-Equifax-Electronic-W-2-Setup.pdf" download="all"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2018/01/2017-Equifax-Electronic-W-2-Setup.pdf]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook>Employee Portal]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[400]]></id>
+		<title><![CDATA[Client Set-Up (Phase 1 procedure)]]></title>
+		<content><![CDATA[When a new client is signed there are a few things that we must ALWAYS do for them to ensure a successful marketing campaign. The following set-up procedures are also part of our Phase 1 procedure for every new marketing client.
+
+&nbsp;
+
+<strong>Main Elements to Set Up</strong>
+<ul>
+ 	<li>Google Analytics
+<ul>
+ 	<li>Setting Data Views</li>
+ 	<li>Configuring Filters &amp; Goals</li>
+</ul>
+</li>
+ 	<li>Google Tag Manager
+<ul>
+ 	<li>Integrating Google Analytics</li>
+ 	<li>Verifying Google Search Console</li>
+ 	<li>Creating &amp; Syncing Events</li>
+</ul>
+</li>
+ 	<li>Google Search Console
+<ul>
+ 	<li>Submitting Sitemaps (we'll discuss why this matters later)</li>
+</ul>
+</li>
+ 	<li>Authoritas (formerly ASEO)
+<ul>
+ 	<li>Add Site and Keywords</li>
+</ul>
+</li>
+</ul>
+
+<hr />
+
+<strong>Google Analytics</strong>
+
+Setting up Analytics should be one of the first things we do for our clients. Most will come in with an account already set up, and that is fine but we need to get access to their account and set Firetoss up as an admin. There are two main options for doing this, the choice is either:
+<ol>
+ 	<li>Create a separate individual account for each Client, or</li>
+ 	<li>Have your master Google Analytics account and add a new property for each client.</li>
+</ol>
+Typically we will follow option number 1, as that is typically seen as an agency "best practice." There are several benefits for allowing the clients to each have separate accounts including:
+<ul>
+ 	<li>Easier-to-read data for each client</li>
+ 	<li>The data and account actually belong to the client so if they ever move to a different agency they can just remove Firetoss' access</li>
+ 	<li>It's better for both parties to be able to walk away from an agreement cleanly if necessary</li>
+</ul>
+All we need to set Firetoss up on an account is admin access, and you can easily request that from the client by asking them to follow these steps:
+
+<img class="size-medium wp-image-402 alignleft" src="http://wiki.devft.com/wp-content/uploads/2018/01/Screen-Shot-2018-01-26-at-9.20.54-AM-300x181.png" alt="" width="300" height="181" />
+<ol>
+ 	<li>Sign into Google Analytics</li>
+ 	<li>Click on the <strong>Admin</strong> tag at the top of the page</li>
+ 	<li>Select <strong>Account</strong> from the menu</li>
+ 	<li>Select <strong>User Management</strong></li>
+ 	<li>Enter the details for Firetoss
+<ul>
+ 	<li>Make sure that the client selects <strong>Manage Users &amp; Edit</strong> so that we are able to make changes, add team members if needed, and manage the account!</li>
+</ul>
+</li>
+</ol>
+&nbsp;
+
+Here's a helpful email template that you can send to the new client to request access!
+
+Hi _____, Welcome to Firetoss! We are very excited to begin the set-up phase for the marketing aspect of your project. The first thing we need to do is get access to your Google Analytics account so that we can set up the proper goals, filters and data views. Can you please grant us admin access? Here are the steps to do this:
+
+Login to your Analytics Console here: https://analytics.google.com/analytics/web/
+<ol>
+ 	<li>Click the <strong>Admin</strong> tab</li>
+ 	<li>Select your website under <strong>Account</strong></li>
+ 	<li>Select <strong>User Management</strong></li>
+ 	<li>Enter the following email (<strong>analytics@firetoss.com</strong>)</li>
+ 	<li>Select <strong>Manger Users </strong>and <strong>Edit</strong></li>
+ 	<li>Check the box that says <em><strong>Notify this user by email</strong></em></li>
+ 	<li>Click <strong>Add</strong></li>
+</ol>
+Thanks!
+
+&nbsp;
+
+Once you have access to the account you can set up the data views, goals (as discussed with the Marketing Director and/or client), and filters.
+
+<hr />
+
+<strong>Google Tag Manager</strong>
+
+Google Tag Manager and Google Analytics are two completely separate tools that work very closely together. To put it simply, GTM is an easy way to manage the tags (aka snippets of JavaScript that send info to third-parties), on a website. GTM also makes it easier to ADD these tags to your site! Instead of having to go in and manually change the javascript you can simply set up a tag  and decide what needs to fire and on what page or action.
+
+There are 3 main tracking components to Google Tag Manager:
+<ol>
+ 	<li>Tags (snippets of code added to your website)</li>
+ 	<li>Triggers (tells us when and where the tags are put into action)</li>
+ 	<li>Variables (used to receive and store information that are used by the tags &amp; triggers)</li>
+</ol>
+<em>Here's an example of how GTM works with Google Analytics to help us track what a user is doing on a site</em>
+
+Let's say that you want to figure out how many people downloaded a certain file and what page the user was on when that file was downloaded. To figure this out, you would set up a <strong>Click Trigger</strong> and <strong>Google Analytics Tag</strong> to see what and where resources on a website are being downloaded. It is literally as easy as that! You can also use GTM to dictate when this data is sent to analytics if you so choose.
+
+Now you're ready to start setting up some triggers! Here's an example of how to set up button clicks in GTM. The process is split into 3 steps (that coincide with the 3 main tracking components we saw earlier!)
+<ol>
+ 	<li>Build a Trigger</li>
+ 	<li>Trigger Configuration</li>
+ 	<li>Linking to Google Analytics Tag</li>
+</ol>
+<span style="text-decoration: underline;">Step 1: Build a Trigger</span>
+
+<img class="alignleft wp-image-403 " src="http://wiki.devft.com/wp-content/uploads/2018/01/Screen-Shot-2018-01-26-at-9.44.58-AM.png" alt="" width="278" height="292" />
+<ol>
+ 	<li><strong><strong>Open GTM</strong></strong>&nbsp;</li>
+ 	<li>Click <strong><strong>Trigger</strong></strong>&nbsp;</li>
+ 	<li><strong>Create</strong> a new Trigger</li>
+ 	<li>Choose <strong>Click</strong> for the event</li>
+ 	<li>Choose <strong>All Elements</strong>  when configuring</li>
+ 	<li>For <strong><strong>Fire On, choose All Clicks</strong></strong>&nbsp;</li>
+ 	<li> Create Trigger</li>
+</ol>
+&nbsp;
+
+After you've done that, you will need to find the HTML markup of the button click by using the GTM preview. This will allow you to view the variables that define your click! You may need to refresh the page and then click the button.
+
+<img src="http://www.absentdata.com/wp-content/uploads/2016/03/datalayer-1.png" />
+
+<span style="text-decoration: underline;">Step 2: Define the Trigger</span>
+
+Using the example above, we can see that the click class is associated with the trigger called 'search-btn." We can use this info to redefine the click trigger!
+<ol>
+ 	<li>Choose <strong>Generic Click Trigger</strong></li>
+ 	<li><strong>Rename</strong> it to a specific name (ie: 20% off sale button)</li>
+ 	<li>Change to <strong>Fire on Click</strong></li>
+ 	<li>Choose <strong>Click Classes</strong> and within containing add the button's specific name.</li>
+</ol>
+<span style="text-decoration: underline;">Step 3: Attaching the Trigger to Google Analytics</span>
+
+<img class="alignleft" src="http://www.absentdata.com/wp-content/uploads/2016/03/Event-GTM-1.png" />
+<ul>
+ 	<li>Open GTM, <strong>create a tag</strong></li>
+ 	<li>Choose the <strong>Google Analytics Template</strong></li>
+ 	<li>For tag type, choose <strong>Universal</strong></li>
+ 	<li>Click Configure Tag and a<strong>dd your Google analytics tracking ID</strong></li>
+ 	<li> For the Track Type, <strong>Choose Event</strong></li>
+ 	<li> Name The <strong>Category,  Action and Label.</strong></li>
+ 	<li>For the Value, you will need to define this for my purposes I chose page path because I would like know the page where the click occurred</li>
+ 	<li> For the Fire On rule, choose the More option and <strong>choose your defined click trigger.</strong></li>
+ 	<li><strong>Create Tag</strong></li>
+</ul>
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+Lastly, open your TRM preview mode and test your tag! After you click the button you will see if the tag is firing correctly.
+
+<hr />
+
+<strong>Google Search Console</strong>
+
+The Search Console allows us to monitor and maintain a site's Google Search Results. While a website doesn't have to have search console set up to start appearing in search results, being in search console allows us to start to understand how Google is viewing a site and will help us to optimize it for better SERP performance.
+
+So, what does Search Console allow us to do?
+<ul>
+ 	<li dir="ltr">Make sure that Google can access all of a site's content</li>
+ 	<li dir="ltr">Submit new content for crawling and remove content we don't want shown in search results or that are producing errors</li>
+ 	<li>Create and monitor content that delivers visually engaging search results</li>
+ 	<li>Maintain a site with minimal disruption to search performance</li>
+ 	<li>Monitor and resolve malware or spam issues so the site stays clean</li>
+ 	<li>See which search terms caused the site to appear on the SERP</li>
+ 	<li>Monitor which search queries resulted in the most traffic to the site</li>
+ 	<li>View which sites are linking to a website</li>
+ 	<li>Quickly check mobile site optimization</li>
+</ul>
+<em>Setup of Search Console</em>
+
+Before you set up Search Console you should be set up in Analytics first and have full admin access. Once this is done, you can follow these steps to set up a website in Search Console:
+<ul>
+ 	<li>Go to: https://www.google.com/webmasters/tools/home</li>
+ 	<li>First you will need to log in using the Analytics@firetoss.com account</li>
+ 	<li>Once you have successfully logged in, click the <strong>Add A Property</strong> button at the top of the page</li>
+ 	<li>Enter the URL of the client's website, then click <strong>continue</strong></li>
+ 	<li>Next you’ll be asked to verify that you own the website in one of four ways:
+<ul>
+ 	<li>If you have access to the root of your website you can upload a html file</li>
+ 	<li>If you manage your hosting yourself, you can verify via your hosting provider</li>
+ 	<li>If you use Google Tag Manager, you can verify via Google Tags</li>
+ 	<li>Or, by far the quickest and easiest method, verify ownership via your Google Analytics Tracking ID</li>
+</ul>
+</li>
+</ul>
+Once you have a site set up, you should submit a sitemap. You can easily create on using the Yoast SEO plugin on Wordpress. This will automatically generate XML site maps for the entire site.
+
+<hr />
+
+<strong>Authoritas (Formerly Analytics SEO)</strong>
+
+Authoritas is the SEO and content marketing software that we use to easily generate reports and to really control our SEO efforts. It is IMPERATIVE that you to not skip this set up step for new clients because this is how they will receive their monthly reports and what you will reference 99% of the time when having de-briefing meetings with the clients.
+<ol>
+ 	<li>go to www.authoritas.com and <strong>Login</strong> (this should be saved in OnePassword)</li>
+ 	<li>Click on <strong>Dashboard</strong></li>
+ 	<li>On the top left of the screen click the first dropdown menu that should already have a site URL listed in it and choose <strong>Add Site</strong></li>
+ 	<li>Type the site URL into the box and click <strong>Add Site</strong></li>
+ 	<li>Go through the prompts for each of the 7 sections with your client's details</li>
+</ol>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing>Marketing Training]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[404]]></id>
+		<title><![CDATA[The Basics of Content Writing for SEO]]></title>
+		<content><![CDATA[How many times have you heard the phrase "Content is King," come from the mouths of keynote speakers? While that concept is great, it's not always the best idea to just slap a bunch of random content up on a website and see what works. The key to SEO content is the STRATEGY and RESEARCH that your content is based off of.
+
+When you are writing content for a website, you should always default to the 5-W's of writing:
+<ol>
+ 	<li><strong>WHO</strong> are you writing for and/or speaking to?</li>
+ 	<li><strong>WHAT</strong> are you trying to accomplish with your writing (is it to drive the reader further into the conversion funnel? Is it to fill out a form? Is it to simply continue reading and stay on the site longer?)</li>
+ 	<li><strong>WHEN</strong> will they be reading this? Where are your readers in the conversion funnel? If they are at the top of the funnel you should speak more broadly and try to gain their interest. If they are towards the bottom of the funnel you may be pushing more for conversions and giving specifics.</li>
+ 	<li><strong>WHERE</strong> will this content live on the website?</li>
+ 	<li><strong>WHY</strong> are you writing about this topic? This ties into <strong>WHAT</strong> is the goal.</li>
+</ol>
+
+<hr />
+
+<em><strong>DO YOUR PRE-WORK!</strong></em>
+
+As I was saying before, you should have a strategy for writing before you just dive in and start. The best way to start setting up a strategy is through keyword research. There are several tools that you can use for identifying high-ranking and intent-driven keywords which you have access to:
+<ul>
+ 	<li>Google Adwords Keyword Planner</li>
+ 	<li><a href="https://www.spyfu.com/" target="_blank" rel="noopener">Spyfu</a></li>
+ 	<li><a href="http://authoritas.com/">Authoritas</a></li>
+ 	<li>Google (searches related to *search term*)</li>
+</ul>
+Another good way to start researching for content strategy is to do some research on the client's competitors. This type of research will help you to figure out the keywords that a competitor is targeting so that the website you're writing for can start to compete on the SERPs with others in their industry. You can use <strong>Spyfu</strong> to find competitors that you share keywords with and to get overall information on how well competitor sites are doing in terms of content. You can also just do a quick <strong>Google Search</strong> to see <strong>What</strong> is ranking, <strong>Why</strong> is it ranking well, and <strong>What </strong>could we do that is similar...BUT BETTER?!
+
+<hr />
+
+<strong>The Mediums and SEO</strong>
+
+You will likely be writing content for one or more of these three mediums:
+<ol>
+ 	<li>Websites</li>
+ 	<li>Blogs</li>
+ 	<li>Emails</li>
+</ol>
+With this in mind, you will find that content and the way it is structured and presented will differ amongst these mediums, even if they keywords and the strategy are the same. It is important that you write for each medium and not just copy/paste the same content, in the same format for each. When google is crawling a website or blog it is looking for different keys on the site to tell it how to index and rank your page for optimum search results.
+
+<em>WEBSITE PAGES</em>
+
+If you refer back to the training on "<a href="http://wiki.devft.com/knowledgebase/basic-wordpress-on-site-optimization/" target="_blank" rel="noopener">Basic Wordpress On-Site Optimization</a>" you will recall that there are several different elements that must be in place for Google to crawl the page correctly including:
+<ul>
+ 	<li>Heading Structures (H1, H2, H3...)</li>
+ 	<li>Image Optimization (Keyword optimized <strong>alt titles</strong>)</li>
+</ul>
+However, content writing goes a little bit deeper than just the proper structure of a page. When you are writing your page should have <strong>AT LEAST</strong> 300 words, and ideally should be between 1,000 - 2,000 words. This copy should include the target keywords from your keyword research. You <strong>should not </strong>stuff the content with keywords, but use a delicate balance and put an optimal amount of keywords in the copy without overdoing it.
+
+<em>BLOG POSTS</em>
+
+If the website you're working on doesn't have a blog...we should discuss the opportunity of starting one for the customer. A blog is a great way to add content and relevant keywords to a website without keyword stuffing on every page. Additionally,  <a href="http://www.bloggingflail.com/subdomains-vs-subdirectories-seo/" target="_blank" rel="noopener">Blogs should be set up as a <strong>subdirectory</strong> and NOT a <strong>subdomain</strong>.</a>
+
+Blogs are also a GREAT way to do internal and external linking on a website. Many times the topics you will be writing about for blogs will also tie in to content that is already featured on another page of the site. By linking the text to another page on the site you can begin building a solid internal-link network. You can also use blogs as "bargaining tools" when discussing back-linking and external linking options with webmasters of related sites.
+
+Lastly, blogs are awesome tools for linking from social media or emails that are going out to a customer base. When you are constantly directing relevant traffic to new content, this is favored in the eyes of the Google Gods (lol). Always remember, just like in on-page optimization, it is important that your blog has appropriate meta titles &amp; descriptions.
+
+Once your blog is complete and published, you may think that your work is over...but it's not! You need to PROMOTE your blog effectively otherwise no one will see it! This is accomplished through channels such as social media, email campaigns, or even key influencers whom you may be working with.
+
+Here's a <a href="https://www.spoonfulofcomfort.com/13-delicious-fall-soup-recipes-to-try-this-season/" target="_blank" rel="noopener">GREAT blog example</a> (by none other than our own Taylor Calmelot!)
+
+And here is a <a href="https://artisanhardware.com/barn-door-blog/is-it-time-for-a-sliding-barn-door" target="_blank" rel="noopener">NOT SO GREAT blog example</a> by someone who clearly isn't on the Amazing Firetoss Marketing Team
+
+<hr />
+
+<strong>Email &amp; Social Media</strong>
+
+These two mediums are pretty straight-forward and the writing style is very similar to blog composition, but there are a few key things that these channels require on top of great writing.
+
+<em>Subject Lines &amp; Headlines: </em>These are EXTREMELY important when getting ready to post or send out. This is what is going to make your users take an action and read further! You should always put yourself in the shoes of your audience when you are crafting these little eye-catchers. Provocative, interesting, listicles, scandalous and original content are ALWAYS going to stand out amongst the competition. Here are some good reads on how to craft appropriate subject lines and headlines for <strong><a href="https://blog.hubspot.com/marketing/best-email-subject-lines-list" target="_blank" rel="noopener">EMAIL</a></strong> and <a href="https://guestpost.com/blog/2016/10/examples-catchy-blog-titles/" target="_blank" rel="noopener"><strong>SOCIAL MEDIA</strong></a>.
+
+<em>Email: </em>When composing an email try to limit your text to a paragraph or two. You should include ONE simple CTA for the reader to engage with. Make sure you are linking optimized images and text and always default to simplicity and scan-ability for your readers. Most people will read their email on their phone so mobile optimization and the ability to quickly get the message across is VITAL!
+
+<em>Social Media:</em> Social media is probably the simplest medium to write for. Your posts should be short and sweet. If possible, include an image, video or infographic. These types of posts will garner more engagement than text-only posts. You should also be acutely aware of the language you are using on the post. There is a fine line that you walk between being "salesy" and being "authentic" and most clients are looking for us to find the perfect balance between both of these writing styles.
+
+<hr />
+
+Words of Wisdom from the Queen of Strategic Content, Taylor Calmelot:
+
+<em>"STAY WOKE! Always be educating yourself on new trends in SEO and, in general, read more and write more. Enjoy learning new things. This will keep your mind sharp while also preventing writer's block."</em>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing>Marketing Training]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[405]]></id>
+		<title><![CDATA[Keyword Research]]></title>
+		<content><![CDATA[[embeddoc url="http://wiki.devft.com/wp-content/uploads/2018/01/Keyword-Research-Training-Updated.pdf" download="all"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2018/01/Keyword-Research-Training-Updated.pdf]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing>Marketing Training]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[407]]></id>
+		<title><![CDATA[Intro to Google Analytics]]></title>
+		<content><![CDATA[[embeddoc url="http://wiki.devft.com/wp-content/uploads/2018/01/Intro-to-Google-Analytics.pdf" download="all"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2018/01/Intro-to-Google-Analytics.pdf]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing>Marketing Training]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[409]]></id>
+		<title><![CDATA[Intro to Search Console]]></title>
+		<content><![CDATA[[embeddoc url="http://wiki.devft.com/wp-content/uploads/2018/01/Intro-to-Search-Console.pdf" download="all"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2018/01/Intro-to-Search-Console.pdf]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing>Marketing Training]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[411]]></id>
+		<title><![CDATA[Marketing Daily Reading and/or Listening]]></title>
+		<content><![CDATA[<span style="font-weight: 400;">These are some of the top blogs/info sources for our industry. There are WAYYY more than what’s listed here so add to it if you like, but this is a good place to start.</span>
+<ul>
+ 	<li style="font-weight: 400;"><a href="https://blog.google/"><span style="font-weight: 400;">https://blog.google/</span></a></li>
+ 	<li style="font-weight: 400;"><a href="http://searchengineland.com/"><span style="font-weight: 400;">http://searchengineland.com/</span></a></li>
+ 	<li style="font-weight: 400;"><a href="http://www.searchenginewatch.com/"><span style="font-weight: 400;">http://www.searchenginewatch.com/</span></a></li>
+ 	<li style="font-weight: 400;"><a href="https://www.searchenginejournal.com/"><span style="font-weight: 400;">https://www.searchenginejournal.com/</span></a></li>
+ 	<li style="font-weight: 400;"><a href="https://moz.com/blog"><span style="font-weight: 400;">https://moz.com/blog</span></a></li>
+ 	<li style="font-weight: 400;"><a href="https://blog.kissmetrics.com/"><span style="font-weight: 400;">https://blog.kissmetrics.com/</span></a></li>
+ 	<li style="font-weight: 400;"><a href="https://www.highervisibility.com/blog/"><span style="font-weight: 400;">https://www.highervisibility.com/blog/</span></a></li>
+ 	<li style="font-weight: 400;"><a href="https://www.semrush.com/blog/"><span style="font-weight: 400;">https://www.semrush.com/blog/</span></a></li>
+ 	<li style="font-weight: 400;"><a href="http://contentmarketinginstitute.com/"><span style="font-weight: 400;">http://contentmarketinginstitute.com/</span></a></li>
+ 	<li style="font-weight: 400;"><a href="https://blog.hubspot.com/marketing#sm.0000wy8yyfeu7dtjw8u10h51y836l"><span style="font-weight: 400;">https://blog.hubspot.com/marketing#sm.0000wy8yyfeu7dtjw8u10h51y836l</span></a></li>
+ 	<li style="font-weight: 400;"><a href="http://neilpatel.com/podcast/"><span style="font-weight: 400;">http://neilpatel.com/podcast/</span></a></li>
+</ul>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[412]]></id>
+		<title><![CDATA[Marketing New SEO Client Set-up Checklist]]></title>
+		<content><![CDATA[<ul>
+ 	<li>Run Site Speed Test and record the initial results</li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Google Analytics Setup</span>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Account Creation</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Setting Up Multiple Views</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;"><span style="font-weight: 400;">Setting Up Filters</span></span></li>
+</ul>
+</li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Google Tag Manager Setup</span>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Installing Code</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Creating Google Analytics Variable</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Creating Google Analytics pageview Tag</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Publishing Changes</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;"><span style="font-weight: 400;">Verifying Function (Tag Assistant + Real Time View)</span></span></li>
+</ul>
+</li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Google Search Console Setup</span>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Property Verification</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;"><span style="font-weight: 400;">Adding Sitemaps</span></span></li>
+</ul>
+</li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Authoritas Setup</span>
+<ul>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Syncing GA, GWMT</span></li>
+ 	<li style="font-weight: 400;"><span style="font-weight: 400;">Adding &amp; tagging keywords</span></li>
+ 	<li>Set up automatic reports</li>
+</ul>
+</li>
+</ul>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[415]]></id>
+		<title><![CDATA[Site Speed Optimization]]></title>
+		<content><![CDATA[Site speed refers to the amount of time it takes for a website to load once you've landed on it. This is very important because it tells us how quickly a user is able to see and interact with a website. Not only is it important to have a quick site speed for on-page users, but Google will also look at site speed when determining placement on organic search results pages.
+
+"<em>According to <a href="https://blog.kissmetrics.com/loading-time/">surveys done by Akamai and Gomez.com</a>, nearly half of web users expect a site to load in 2 seconds or less, and they tend to abandon a site that isn’t loaded within 3 seconds. 79% of web shoppers who have trouble with web site performance say they won’t return to the site to buy again and around 44% of them would tell a friend if they had a poor experience shopping online.</em>" <strong>- https://blog.kissmetrics.com/speed-is-a-killer/</strong>
+
+<span style="color: #ff0000;">Check out this helpful tutorial on how to view, and optimize and track site speed for each of our clients!</span>
+
+[embeddoc url="http://wiki.devft.com/wp-content/uploads/2018/02/Site-Speed-Optimization.pdf" download="all"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2018/02/Site-Speed-Optimization.pdf]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing>Marketing Training]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[417]]></id>
+		<title><![CDATA[Intro to Google Adwords]]></title>
+		<content><![CDATA[What is Google Adwords? To put it simply, Google adwords is Google's advertising platform where advertisers can bid on certain keywords in order to have their results appear in the Google search results. You may have heard of PPC (Pay-Per-Click) Advertising...well this is Google's bidding system that allows us to run PPC campaigns!
+
+Check out this awesome infographic from Wordstream which breaks down the bidding process, then scroll though the informational overview slides from a previous "Lunch &amp; Learn" that was hosted at Firetoss. These two assets should be able to answer some of your basic questions when it comes to Adwords. Of course, these tools are only scratching the surface though, so if you want to learn more, seek out your friendly Firetoss PPC specialist for some more detailed explanations!
+
+<a href="http://wiki.devft.com/wp-content/uploads/2018/02/what-is-google-adwords.jpg" target="_blank" rel="noopener"><img class="aligncenter wp-image-418" src="http://wiki.devft.com/wp-content/uploads/2018/02/what-is-google-adwords-207x1024.jpg" alt="" width="500" height="2472" /></a>[embeddoc url="http://wiki.devft.com/wp-content/uploads/2018/02/Google-Adwords-Training.pdf" download="all"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2018/02/Google-Adwords-Training.pdf]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing>Marketing Training]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[425]]></id>
+		<title><![CDATA[Divi Test]]></title>
+		<content><![CDATA[<div>INSTALL WORDPRESS</div>
+<div>
+
+Video Guide: <a href="https://vimeo.com/262262896" target="_blank" rel="noopener">Install Wordpress using Softaculous</a>
+<ol>
+ 	<li style="list-style-type: none;">
+<ol>
+ 	<li>Login to firetoss.online cpanel
+<ul>
+ 	<li>firetoss.online/cpanel</li>
+ 	<li>User: fonline</li>
+ 	<li>Pwd: DWHifAEJZxRREogstpBf6XwD</li>
+</ul>
+</li>
+ 	<li>Scroll down to Softaculous Apps Installer and select Wordpress</li>
+ 	<li>Choose Domain.
+<ul>
+ 	<li>Select devitest1.firetoss.online in the dropdown</li>
+</ul>
+</li>
+ 	<li>In Directory
+<ul>
+ 	<li>For the directory type in your name all lowercase in one word: (e.g. “mikesmith”)</li>
+</ul>
+</li>
+ 	<li>Admin Account
+<ul>
+ 	<li>Create an admin username and password. For this exercise, use:
+<ul>
+ 	<li>Username: divibuilder</li>
+ 	<li>Password: Firetoss!</li>
+</ul>
+</li>
+</ul>
+</li>
+ 	<li>Click Install</li>
+</ol>
+</li>
+</ol>
+<div></div>
+</div>
+<div>INSTALL DIVI AND DIVI ULTIMATE THEMES</div>
+<div>Visual Guide: <a href="https://vimeo.com/262550097">Install Divi and Divi Ultimate</a></div>
+<div>
+<ol>
+ 	<li>Login to the WP install on your subdomain. e.g. devtest1.firetoss.online/&lt;YourName&gt;/wp-admin
+<ol>
+ 	<li>Use your previously created Wordpress Credentials</li>
+</ol>
+</li>
+ 	<li>Install Divi
+<ul>
+ 	<li>Download theme file <a href="http://firetoss.com/divitest/">here</a>.</li>
+ 	<li>Go to Appearance &gt; Themes.</li>
+ 	<li>Click on Add New</li>
+ 	<li>Click on Upload Theme</li>
+ 	<li>Drag and drop your DIVI theme .zip file into the Choose File Button</li>
+ 	<li>Click Install Now</li>
+</ul>
+</li>
+ 	<li>Install Divi Ultimate
+<ul>
+ 	<li>Download theme <a href="http://firetoss.com/divitest/">here</a>.</li>
+ 	<li>Follow instructions <a href="https://firetoss.com/wp-content/uploads/2018/03/divi.help_threads_new-installation-guide-for-v3-0-above.328_.png">here</a>.</li>
+</ul>
+</li>
+</ol>
+<div>BUILD DIVI PAGES</div>
+</div>
+<div>Visual Guide: <a href="https://www.youtube.com/watch?v=BTVtpQpJRPg">https://www.youtube.com/watch?v=BTVtpQpJRPg</a></div>
+<div>
+<ol>
+ 	<li><span style="font-family: 'Helvetica Neue';">Download your design here. </span>
+<ul>
+ 	<li><a href="https://www.dropbox.com/sh/93pkcs1bds9r0wl/AADdhh-wN0p6GOvxiaC1IEfaa?dl=0">https://www.dropbox.com/sh/93pkcs1bds9r0wl/AADdhh-wN0p6GOvxiaC1IEfaa?dl=0</a></li>
+</ul>
+</li>
+ 	<li>Download Your Image Assets Here
+<ul>
+ 	<li><a href="https://www.dropbox.com/sh/2aid2o0v8eb1l7g/AAAk7YsnVj6vBWG8G-9bHqara?dl=0">https://www.dropbox.com/sh/2aid2o0v8eb1l7g/AAAk7YsnVj6vBWG8G-9bHqara?dl=0</a></li>
+</ul>
+</li>
+ 	<li>Review the design. Select the most appropriate of the available Divi Ultimate layouts that most closely matches the design.</li>
+ 	<li>Alter the page layouts to match the designs.
+<ul>
+ 	<li>Delete, modify, or add divi modules and sections to match the designs.</li>
+</ul>
+</li>
+</ol>
+</div>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web>Tests]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[439]]></id>
+		<title><![CDATA[Support Test - Updates]]></title>
+		<content><![CDATA[CLONE <a href="http://support-updates.firetoss.online" target="_blank" rel="noopener">http://support-updates.firetoss.online</a> TO NEW SUBDOMAIN
+<blockquote>https://67.227.198.144:2083
+fonline
+DWHifAEJZxRREogstpBf6XwD</blockquote>
+<a href="https://codex.wordpress.org/Upgrading_WordPress" target="_blank" rel="noopener">MAKE SITE UPDATES</a>
+
+<a href="https://codex.wordpress.org/Debugging_in_WordPress" target="_blank" rel="noopener">MAKE SURE NOTHING BROKE</a>
+
+COMPLETED
+<ul>
+ 	<li>Provide Subdomain URL for review</li>
+</ul>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web>Tests]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[440]]></id>
+		<title><![CDATA[Support Test - Code Addition]]></title>
+		<content><![CDATA[CLONE <a href="http://support-addition.firetoss.online" target="_blank" rel="noopener">http://support-addition.firetoss.online</a> TO NEW SUBDOMAIN
+<blockquote>https://67.227.198.144:2083
+fonline
+DWHifAEJZxRREogstpBf6XwD</blockquote>
+MAKE REQUESTED SITE CHANGES
+<ul>
+ 	<li>Hide Gravity Form field labels when using placeholders</li>
+ 	<li>Change excerpt length of blog Posts to 20 characters</li>
+ 	<li>Add Category selection dropdown to blog page</li>
+ 	<li>Using Wp Pagenavi make the pagination look like the image below</li>
+</ul>
+<a href="http://wiki.devft.com/wp-content/uploads/2018/04/screenshot-1.png"><img class="alignnone wp-image-453 size-full" src="http://wiki.devft.com/wp-content/uploads/2018/04/screenshot-1.png" alt="" width="846" height="76" /></a>
+
+<a href="https://codex.wordpress.org/Debugging_in_WordPress" target="_blank" rel="noopener">MAKE SURE NOTHING BROKE</a>
+
+COMPLETED
+<ul>
+ 	<li>Provide Subdomain URL for review</li>
+</ul>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web>Tests]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[441]]></id>
+		<title><![CDATA[Support Test - Code Fixes]]></title>
+		<content><![CDATA[CLONE <a href="http://support-fixes.firetoss.online" target="_blank" rel="noopener">http://support-fixes.firetoss.online</a> TO NEW SUBDOMAIN
+<blockquote>https://67.227.198.144:2083
+fonline
+DWHifAEJZxRREogstpBf6XwD</blockquote>
+MAKE REQUESTED SITE FIXES
+<ul>
+ 	<li>Fix errors being thrown by wp_debug and console</li>
+</ul>
+<a href="https://codex.wordpress.org/Debugging_in_WordPress" target="_blank" rel="noopener">MAKE SURE NOTHING BROKE</a>
+
+COMPLETED
+<ul>
+ 	<li>Provide Subdomain URL for review</li>
+</ul>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web>Tests]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[443]]></id>
+		<title><![CDATA[How to Use Divi Ultimate]]></title>
+		<content><![CDATA[<h1 style="font-weight: 600;">DIVI ULTIMATE SETUP </h1>
+
+
+<hr />
+<strong>Spin up a site - </strong>
+
+<hr />
+
+<a href="http://wiki.devft.com/knowledgebase/createsubdomain/"><span style="font-weight: 400;">http://wiki.devft.com/knowledgebase/createsubdomain/</span></a>
+
+**Stop at step 41!**
+
+&nbsp;
+
+<hr />
+
+<strong>Install Divi - </strong>
+
+<hr />
+
+<a href="https://www.elegantthemes.com/members-area/">https://www.elegantthemes.com/members-area/</a>
+
+Login with creds from 1password
+
+Download divi
+
+<strong><img style="border: 4px solid #ddd;" class="alignnone size-full wp-image-444" src="http://wiki.devft.com/wp-content/uploads/2018/04/download-divi.png" alt="" width="1330" height="953" /></strong>
+
+&nbsp;
+
+<span style="font-weight: 400;">Go back to your site, hover over appearance, click themes, click add new, click upload, drag and drop divi zip to upload, activate</span>
+
+&nbsp;
+
+<hr />
+
+<strong>Install Divi Ultimate - </strong>
+
+<hr />
+
+<a href="https://divi.help/"><span style="font-weight: 400;">https://divi.help/</span></a>
+
+<span style="font-weight: 400;">Log in with creds from 1password</span>
+
+<span style="font-weight: 400;">In header menu, click divi ultimate, and click Download divi ultimate</span>
+
+<span style="font-weight: 400;">The latest version will be at the top of the list, click it, and download all files: Divi-Ultimate.zip, Divi-Ultimate-Library.xml, Divi-Ultimate-Customizer.json, and Divi-Ultimate-Plugin.zip</span>
+
+<span style="font-weight: 400;"><img style="border: 4px solid #ddd;"  class="alignnone size-full wp-image-445" src="http://wiki.devft.com/wp-content/uploads/2018/04/du-1.png" alt="" width="1412" height="960" /></span>
+
+<span style="font-weight: 400;">(the best installation guide will also be on that page)</span>
+
+<span style="font-weight: 400;">Here’s a link for v3.0 &amp; above: </span>
+
+<a href="https://divi.help/threads/new-installation-guide-for-v3-0-above.328/"><span style="font-weight: 400;">https://divi.help/threads/new-installation-guide-for-v3-0-above.328/</span></a>
+
+<span style="font-weight: 400;">(“step 11- choosing your desired theme:” Ask the designer which theme of Divi Ultimate they pulled most of their layouts from and select that one. Note that even after you select a theme, divi ultimate will STILL pull in every single layout from every theme and put it in the divi library. That being said, which theme you select isn’t too important.)</span>
+
+&nbsp;
+
+<hr />
+
+<strong>Setup you should do before you start customizing your theme -</strong>
+
+<hr />
+
+Create pages:
+
+Create all pages that your Invision mock up has. **Create a home page ie. "home" or "front page"**
+
+Create a menu:
+
+Hover on appearance, select menu’s. You’ll need to create a menu first, typically call it “Primary Menu”. Start selecting pages and add them to your menu.
+
+<img style="border: 4px solid #ddd;" class="alignnone size-full wp-image-447" src="http://wiki.devft.com/wp-content/uploads/2018/04/menu-1.png" alt="" width="1796" height="919" />
+
+Set Logo:
+
+Hover on “divi” click “Theme Options”
+
+<img style="border: 4px solid #ddd;" class="alignnone size-full wp-image-448" src="http://wiki.devft.com/wp-content/uploads/2018/04/add-logo.png" alt="" width="1779" height="925" />
+
+Drag and drop your logo (which will be in the assets folder of the project in dropbox) to the media popup. Select it.
+
+&nbsp;
+
+<hr />
+
+<strong>Start Customizing your Divi Ultimate Theme -</strong>
+
+<hr />
+
+<span style="font-weight: 400;">hover on “divi”, and select “Theme Customizer”</span>
+
+<em><span style="font-weight: 400;">*you’ll have to play around with a lot of these settings to see what changes what, which is nice with customizer because if you save and reload, you can see your changes*</span></em>
+
+Most useful settings to change are:
+
+<span style="font-weight: 400;"> “General Settings” -</span>
+
+<span style="font-weight: 400;">    Typography - You’ll get a styleguide from your designer. Set up all the styles here.</span>
+
+<span style="font-weight: 400;">“Header &amp; Navigation” -</span>
+
+<span style="font-weight: 400;">   This is where you’ll control what your header looks like. </span>
+
+<span style="font-weight: 400;">“Footer” -</span>
+
+<span style="font-weight: 400;">   Select the layout based on design</span>
+
+<span style="font-weight: 400;">   Widgets - **Set styles for footer content here!**</span>
+
+<span style="font-weight: 400;">“Buttons” -</span>
+
+<span style="font-weight: 400;">   Set Global button styles here, very helpful. If there are a couple of different styles, set styles for the most common one, and customize the other ones on an individual basis.</span>
+
+<span style="font-weight: 400;">“Homepage Settings” -</span>
+
+<span style="font-weight: 400;">   Select “A Static Page” for you homepage display, and select the page you created ie. “home”, “frontpage”, etc.</span>
+
+<span style="font-weight: 400;">   I leave Posts Page select box empty.</span>
+
+<em>The rest of the settings are usually pretty out of the box. Be familiar with what is in the customizer, if you're having trouble customizing something... Look in the customizer.</em>
+
+&nbsp;
+
+<hr />
+
+<strong>Adding content to Footer -</strong>
+
+<hr />
+
+<span style="font-weight: 400;">Hover on “appearance” and click “widgets”. There are 4 widgets for the footer. If you selected a three column footer layout(in theme customizer), then add content to Footer Area #1, #2, and #3.</span>
+
+<span style="font-weight: 400;">To add content, drag and drop a content option from the left side. Example - drag and drop “image” and insert the logo. Drag and drop “text” and add html to make a menu.</span>
+
+<img style="border: 4px solid #ddd;" class="alignnone size-full wp-image-449" src="http://wiki.devft.com/wp-content/uploads/2018/04/widgets.png" alt="" width="1791" height="918" />
+
+** The Sidebar widget show's up on blog pages. Sometimes you need to add/remove items depending on the mock up**]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[459]]></id>
+		<title><![CDATA[Cloning a Subdomain to a New Subdomain in Cpanel]]></title>
+		<content><![CDATA[<ol>
+ 	<li>Create New Subdomain</li>
+ 	<li>Copy site Files to subdomain folder</li>
+ 	<li>Create New SQL Database</li>
+ 	<li>Copy Database to new SQL Database</li>
+ 	<li>Update Wordpress URL's</li>
+</ol>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Web>Tests]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[460]]></id>
+		<title><![CDATA[Salary Change Form]]></title>
+		<content><![CDATA[[embeddoc url="http://wiki.devft.com/wp-content/uploads/2018/04/Salary-Change-Form.pdf" download="all"]]]></content>
+		<attachmenturl><![CDATA[http://wiki.devft.com/wp-content/uploads/2018/04/Salary-Change-Form.pdf]]></attachmenturl>
+		<categories><![CDATA[Firetoss General>Forms]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[466]]></id>
+		<title><![CDATA[Payroll Mobile App]]></title>
+		<content><![CDATA[<a href="http://wiki.devft.com/wp-content/uploads/2018/05/Mobile-App_SplashTrack.pdf">[embeddoc url="http://wiki.devft.com/wp-content/uploads/2018/05/Mobile-App_SplashTrack.pdf" download="all"]</a>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Employee Handbook]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[468]]></id>
+		<title><![CDATA[New Hire Setup Form]]></title>
+		<content><![CDATA[Please be aware that any applicable costs for user subscriptions will be allocated against your department's budget
+
+[gravityform id="4" title="false" description="false"]]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Firetoss General>Forms]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[472]]></id>
+		<title><![CDATA[New Customer Sign-on Process]]></title>
+		<content><![CDATA[*updated April 2018*
+
+<img class="aligncenter wp-image-473 size-full" src="http://wiki.devft.com/wp-content/uploads/2018/05/Screen-Shot-2018-05-14-at-2.16.17-PM.png" alt="" width="1238" height="1258" />
+
+&nbsp;
+
+<hr />
+
+<span style="text-decoration: underline;"><strong>Welcome Email includes:</strong></span>
+<ul>
+ 	<li>overview of contract</li>
+ 	<li>contact info of their assigned CX Manager</li>
+ 	<li>Marketing process overview &amp; basic timeline expectations</li>
+ 	<li>Asking client for a date &amp; time for an official kick-off meeting</li>
+</ul>
+
+<hr />
+
+<span style="text-decoration: underline;"><strong>Set Up Email includes:</strong></span>
+<ul>
+ 	<li>Requesting access to the following accounts:
+<ul>
+ 	<li>Google Analytics</li>
+ 	<li>Back-end of their current website</li>
+ 	<li>Google Tag Manager</li>
+ 	<li>Search Console</li>
+ 	<li>Google Adwords (if applicable)</li>
+ 	<li>All Social media (if applicable)</li>
+</ul>
+</li>
+ 	<li>Instructions on how to grant access to the aforementioned platforms</li>
+</ul>
+
+<hr />
+
+<span style="text-decoration: underline;"><strong>Site Health Audit includes:</strong></span>
+<ul>
+ 	<li>Site speed baseline test</li>
+ 	<li>check for missing or duplicate content/metas</li>
+ 	<li>check for H-Tag structure</li>
+ 	<li>check for missing alt tags</li>
+</ul>
+***THIS AUDIT DOES NOT INCLUDE FIXING ANY IDENTIFIED ISSUES!***]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[475]]></id>
+		<title><![CDATA[New Customer Kick-off Process]]></title>
+		<content><![CDATA[*Updated April 2018*
+
+<img class="aligncenter wp-image-476 size-full" src="http://wiki.devft.com/wp-content/uploads/2018/05/Screen-Shot-2018-05-14-at-2.48.16-PM.png" alt="" width="924" height="1060" />
+
+<hr />
+
+*<span style="text-decoration: underline;"><strong>Phase 1 includes:</strong></span>
+<ol>
+ 	<li>Add client to Asana &amp; Harvest</li>
+ 	<li>Complete client setup in Authoritas</li>
+ 	<li>Google Analytics Setup</li>
+ 	<li>Search Console Setup</li>
+ 	<li>Google Tag Manager Setup</li>
+ 	<li>Confirmation of back-end access</li>
+ 	<li>Review Mobile Usability</li>
+ 	<li>Competitive Research</li>
+ 	<li>Competitor Link Research</li>
+ 	<li>Yoast SEO setup</li>
+ 	<li>Sitemap submission/check</li>
+ 	<li>Social setup (if applicable)</li>
+ 	<li>Google Adwords setup (if applicable)</li>
+ 	<li>Keyword Research</li>
+</ol>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[479]]></id>
+		<title><![CDATA[SEO ZOHO Process]]></title>
+		<content><![CDATA[Zoho Access
+
+SEO Fields
+
+TEST!]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Marketing>SEO]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[481]]></id>
+		<title><![CDATA[The 10 Commandments of Zoho Invoice and Subscriptions]]></title>
+		<content><![CDATA[The 10 Commandments of Zoho Invoice and Subscriptions
+<ol>
+ 	<li>Do not work for free.</li>
+ 	<li>Always take payments up front.</li>
+ 	<li>Obtain their credit card information.</li>
+ 	<li>Make sure Firetoss is paid for your work.</li>
+ 	<li>Identify their billing contact.</li>
+ 	<li>Look and see if Firetoss is getting paid before fulfilling a client's request.</li>
+ 	<li>Requests that are over 8 hours or $1200 need to be referred to the Sales team.</li>
+ 	<li>Only work for a client if we have received payment first.</li>
+ 	<li>All recurring agreements automatically renew month-to-month until the client cancels.</li>
+ 	<li>Do not work for free.</li>
+</ol>]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Firetoss General]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[483]]></id>
+		<title><![CDATA[1.1 DT Client Recruiting Brief]]></title>
+		<content><![CDATA[<h2>Intro to the Client Recruiting Brief</h2>
+A client recruiting brief is an online form that collects crucial information about the client's business and what their offerings are to potential drivers. Once a client has signed their contract and intro's have been made, you will then direct the client to complete their recruiting brief<strong>.</strong> This needs to be done preferably before the <strong>kick off call</strong>. If the client does not complete the brief, or only partially completes it, make sure you get the remaining information during the kick off call.
+
+You can find the brief here: <a href="https://www.drivetrucking.com/client-recruiting-brief/">https://www.drivetrucking.com/client-recruiting-brief/</a>
+
+Any / all submissions of this form are sent to be emailed to Sales, your manager, and yourself. If you did not get the email, you can resend or download the recruiting brief via gravity forms in the Drive Trucking backend.
+<h2>Downloading / Resending Client Recruiting Briefs</h2>
+Navigate to Drive Trucking's backend: <a href="https://www.drivetrucking.com/dtadmin/">https://www.drivetrucking.com/dtadmin/</a>
+
+To resend: Hover over the gravity forms tab and select forms. Hover over client recruiting brief form and select entries. Find the entry for the client you are looking for and select it. On the right side of screen under notifications, select recruiting brief notification and enter the emails you would like it to be sent to then hit resend notifications.
+
+To download: Hover over the gravity forms tab and select import / export. Select export entries then find the client recruiting brief form. Hit the select all button, select the date range you want to export, then hit download export file.]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Lead Gen>DT Client Onboarding]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[491]]></id>
+		<title><![CDATA[1.2 DT Kick Off Call]]></title>
+		<content><![CDATA[]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Lead Gen>DT Client Onboarding]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[492]]></id>
+		<title><![CDATA[1.3 DT Client Folders in Google Drive]]></title>
+		<content><![CDATA[]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Lead Gen>DT Client Onboarding]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[493]]></id>
+		<title><![CDATA[1.4 DT Client Profile on drivetrucking.com]]></title>
+		<content><![CDATA[]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Lead Gen>DT Client Onboarding]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+	<node>
+		<id><![CDATA[494]]></id>
+		<title><![CDATA[1.5 DT Client Gravity Forms]]></title>
+		<content><![CDATA[]]></content>
+		<attachmenturl><![CDATA[]]></attachmenturl>
+		<categories><![CDATA[Departments>Lead Gen>DT Client Onboarding]]></categories>
+		<tags><![CDATA[]]></tags>
+	</node>
+</data>

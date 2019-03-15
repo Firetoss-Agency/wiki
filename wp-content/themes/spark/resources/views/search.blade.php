@@ -2,38 +2,33 @@
 
 @section('content')
 
-  <div class="uk-section">
-    <div class="uk-container">
+    <div class="uk-section">
+        <div class="uk-container">
 
-      {!! get_search_form() !!}
+            {!! get_search_form() !!}
 
-      <hr>
+            <hr>
 
-      <div class="uk-grid-divider" uk-grid uk-height-match>
+            <div class="uk-grid-medium" uk-grid uk-height-match>
 
-        @loop
+                @loop
+                <div class="uk-width-1-3">
+                    <a href="{{ the_permalink() }}">
+                        <div class="uk-card uk-card-primary uk-card-body uk-card-hover">
 
-        <div class="uk-width-1-3">
+                            <h2 class="uk-card-title">{{ the_title() }}</h2>
 
-          {{ the_title() }}
+                            {{--{{ the_excerpt() }}--}}
 
+                        </div>
+                    </a>
+                </div>
 
-          {{ the_excerpt() }}
+                @endloop
 
+            </div>
         </div>
-
-        @endloop
-
-      </div>
     </div>
-  </div>
 
-  {!! UIkitPagination() !!}
+    {!! UIkitPagination() !!}
 @endsection
-
-
-<li>SEO</li>
-<li>PPC</li>
-<li>Display Ads</li>
-<li>Analytics</li>
-<li>Email Automation</li>
