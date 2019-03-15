@@ -2,7 +2,7 @@
 
     @loop
 
-    <div class="wiki-card uk-width-1-3"  uk-scrollspy="cls: uk-animation-slide-right;">
+    <div class="wiki-card uk-width-1-3"  uk-scrollspy="cls: uk-animation-fade;">
         <a href="{{ the_permalink() }}" class="uk-link-heading">
             <div class="uk-card uk-card-primary uk-card-body uk-card-hover">
 
