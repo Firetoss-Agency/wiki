@@ -35,13 +35,6 @@
             </div>
 
 
-            {{--<a class="uk-search-toggle" uk-toggle href="#nav-search"><span uk-icon="icon: search"></span></a>--}}
-
-            {{--<div id="nav-search" hidden>{!! get_search_form() !!}</div>--}}
-
-
-
-
                 <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
 
                     <div class="uk-navbar-item uk-width-expand">
