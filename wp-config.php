@@ -6,18 +6,18 @@ if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
  	include( dirname( __FILE__ ) . '/wp-config-local.php' );
 } else {
 	// Otherwise use the settings below on staging/production
-	define('WP_HOME', 'http://wiki.ftscorch.com');
+	define('WP_HOME', 'https://wiki.firetoss.com');
 	define('WP_SITEURL', WP_HOME);
 
 	// ** MySQL settings ** //
 	/** The name of the database for WordPress */
-	define('DB_NAME', 'db_wiki');
+	define('DB_NAME', 'firetoss_wiki');
 
 	/** MySQL database username */
-	define('DB_USER', 'forge');
+	define('DB_USER', 'firetoss_wiki');
 
 	/** MySQL database password */
-	define('DB_PASSWORD', '4S0acP0xO3YZM8T1kGnP');
+	define('DB_PASSWORD', 'Yr=WDp(p8cfd');
 
 	/** MySQL hostname */
 	define('DB_HOST', 'localhost');
